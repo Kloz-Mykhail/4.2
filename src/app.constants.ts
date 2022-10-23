@@ -1,0 +1,9 @@
+export const TYPE_OF_FILES = ['image/png', 'image/jpeg'];
+export const MAX_FILE_SIZE = 1 * 1000 * 1000;
+export const SWAPI_URL = 'https://swapi.dev';
+export const MY_URL = 'http://localhost:3000';
+export const MAX_COUNT_FILES = 10;
+export const FILES_FIELD = 'files';
+export const ADMIN_NAME = 'admin';
+export const ADMIN_PASS = 'admin';
+export const ENV_FILE_NAME = '.development.env';
