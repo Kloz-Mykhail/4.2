@@ -1,36 +1,28 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { ApiModule } from './api/api.module';
+import { Module } from '@nestjs/common';
+import { SwapiModule } from './swapi/swapi.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmAsyncConfig } from './configs/orm.config';
-import { LoggerMiddleware } from './common/logger';
 import { ConfigModule } from '@nestjs/config';
 import { DbModule } from './db/db.module';
-import { UserModule } from './user/user.module';
-import { RoleModule } from './role/role.module';
 import { AuthModule } from './auth/auth.module';
 import { PassportModule } from '@nestjs/passport';
 import { FileModule } from './file/file.module';
-import { ENV_FILE_NAME } from './app.constants';
+import { ENV_FILE_PATH } from './app.constants';
+import { getTypeormConfig } from './configs/data-source.config';
+import { getEnvVar } from './configs/config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ENV_FILE_NAME,
+      envFilePath: ENV_FILE_PATH,
       isGlobal: true,
+      load: [getEnvVar],
     }),
-    ApiModule,
+    TypeOrmModule.forRoot(getTypeormConfig()),
+    PassportModule.register({ session: true }),
+    SwapiModule,
     DbModule,
-    UserModule,
-    RoleModule,
     AuthModule,
     FileModule,
-
-    TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
-    PassportModule.register({ session: true }),
   ],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('*');
-  }
-}
+export class AppModule {}

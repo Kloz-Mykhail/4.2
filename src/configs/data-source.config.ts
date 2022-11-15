@@ -1,25 +1,25 @@
 import { DataSource } from 'typeorm';
-import * as dotenv from 'dotenv';
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions';
-import { ENV_FILE_NAME } from 'src/app.constants';
+import { getEnvVar } from './config';
 
-dotenv.config({
-  path: ENV_FILE_NAME,
-});
-export const typeOrmConfig: MysqlConnectionOptions = {
-  type: 'mysql',
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-  port: +process.env.DB_PORT,
+export function getTypeormConfig(): MysqlConnectionOptions {
+  const { mysql } = getEnvVar();
+  return {
+    type: 'mysql',
+    host: mysql.host,
+    username: mysql.user,
+    password: mysql.password,
+    database: mysql.database,
+    port: mysql.port,
 
-  synchronize: false,
-  entities: ['dist/**/*.entity{.js,.ts}'],
-  dropSchema: false,
-  logging: true,
-  migrations: ['dist/**/migrations/*{.js, .ts}'],
-  migrationsTableName: 'migrations_typeorm',
-};
+    synchronize: false,
+    entities: ['dist/**/*.entity{.js,.ts}'],
+    dropSchema: false,
+    logging: true,
+    migrationsRun: false,
+    migrations: ['dist/db/migrations/*{.js, .ts}'],
+    migrationsTableName: 'typeorm_migrations',
+  };
+}
 
-export default new DataSource(typeOrmConfig);
+export default new DataSource(getTypeormConfig());

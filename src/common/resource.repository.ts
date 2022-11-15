@@ -1,63 +1,65 @@
 import { NotFoundException } from '@nestjs/common';
 import {
+  IPaginationOptions,
+  paginate,
+  Pagination,
+} from 'nestjs-typeorm-paginate';
+import {
   DeepPartial,
   FindManyOptions,
   FindOptionsWhere,
   Repository,
 } from 'typeorm';
-import { BackSetFields, ID, Ok, PagOpt } from './common.interface';
+import { BackSetFields, ID, PagOpt, URL } from './interfaces/common.interface';
 
 export abstract class ResourceRepository<
-  Entity extends BackSetFields & ID & DRes & Record<keyof RIdRes, any>,
+  Entity extends BackSetFields & ID & DRes & Record<keyof RIdRes, unknown>,
   DRes,
-  RIdRes extends { files: ID[] },
+  RIdRes,
 > {
-  constructor(protected readonly repository: Repository<Entity>) {}
+  constructor(
+    protected readonly repository: Repository<Entity>,
+    private readonly relations: Array<keyof RIdRes & string>,
+  ) {}
 
-  async create(discr: DRes & BackSetFields, rel: RIdRes) {
+  async create(discr: DRes & URL, rel?: DeepPartial<RIdRes>): Promise<Entity> {
     const { url } = discr;
-
-    const ent = await this.addRelations(
-      this.repository.create(discr as DeepPartial<Entity>),
-      rel,
-    );
-
+    let ent = this.repository.create(discr as DeepPartial<Entity>);
+    if (rel) {
+      ent = await this.addRelations(ent, rel);
+    }
     const people = await this.repository.save(ent);
-    people.url = `${url}/${people.id}/`;
+    people.url = `${url}/${people.id}`;
 
-    await this.repository.save(people);
-
-    return { id: people.id };
+    return await this.repository.save(people);
   }
 
   async update(
-    id: ID,
-    discr?: Partial<DRes> & Partial<BackSetFields>,
-    rel?: Partial<RIdRes>,
-  ): Promise<Ok> {
-    let ent = await this.repository.findOneBy(id as FindOptionsWhere<Entity>);
+    id: FindOptionsWhere<Entity>,
+    discr?: DeepPartial<DRes>,
+    rel?: DeepPartial<RIdRes>,
+  ): Promise<Entity> {
+    let ent = await this.repository.findOneBy(id);
+
     if (discr) {
       ent = this.repository.create({ ...ent, ...discr });
     }
     if (rel) {
       ent = await this.addRelations(ent, rel);
     }
-    await this.repository.save(ent);
-
-    return { ok: true };
+    return await this.repository.save(ent);
   }
 
   abstract addRelations(
     ent: DeepPartial<Entity>,
-    rel: Partial<RIdRes>,
+    rel: DeepPartial<RIdRes>,
   ): Promise<Entity>;
 
-  async delete(id: FindOptionsWhere<Entity>): Promise<Ok> {
+  async delete(id: FindOptionsWhere<Entity>): Promise<void> {
     await this.repository.remove(await this.repository.findOneBy(id));
-    return { ok: true };
   }
 
-  async getOneBy(id: FindOptionsWhere<Entity>) {
+  async getOneBy(id: FindOptionsWhere<Entity>): Promise<Entity> {
     const ent = (await this.findWithRelations({ where: id })).at(0);
     if (ent) {
       return ent;
@@ -65,19 +67,28 @@ export abstract class ResourceRepository<
     throw new NotFoundException();
   }
 
-  async getMany({ offset = 0, count = 10 }: PagOpt) {
-    return await this.findWithRelations({ take: count, skip: offset });
+  // async getMany({ offset, count }: PagOpt): Promise<Entity[]> {
+  //   return await this.findWithRelations({ take: count, skip: offset });
+  // }
+  async getMany(opt: IPaginationOptions): Promise<Pagination<Entity>> {
+    return paginate(this.repository, opt, { relations: this.relations });
   }
 
-  abstract findWithRelations(
-    options?: FindManyOptions<Entity>,
-  ): Promise<Entity[]>;
+  async findWithRelations(options?: FindManyOptions<Entity>) {
+    return await this.repository.find({
+      relations: this.relations,
+      ...options,
+    });
+  }
 
-  async getExistingEntity<T extends ID>(repo: Repository<T>, entitiesId: ID[]) {
+  async getExistingEntity<T extends ID>(
+    repo: Repository<T>,
+    entitiesId: number[],
+  ): Promise<T[]> {
     return (
       await Promise.all(
         entitiesId.map(async (id) => {
-          return await repo.findOneBy(id as FindOptionsWhere<T>);
+          return await repo.findOneById(id);
         }),
       )
     ).filter((val) => val !== null);

@@ -1,59 +1,62 @@
 import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
-import { IdDto } from 'src/common/dto/id.dto';
 import { PagDto } from 'src/common/dto/pag.dto';
 import { ResourceRepository } from './resource.repository';
-import { BackSetFields, ID, Rel } from './common.interface';
-import { FindOptionsWhere } from 'typeorm';
+import { BackSetFields, ID, Rel } from './interfaces/common.interface';
+import { DeepPartial, FindOptionsWhere } from 'typeorm';
+import { Pagination } from 'nestjs-typeorm-paginate';
 
 @Injectable()
 export abstract class ResourceService<
-  CreateDto extends Rel<RIdRes> & DRes,
-  UpdateDto extends Partial<Rel<Partial<RIdRes>> & DRes>,
-  Entity extends BackSetFields & ID & DRes & Record<keyof RIdRes, any>,
+  CreateDto extends DeepPartial<Rel<RIdRes>> & DRes,
+  UpdateDto extends DeepPartial<Rel<RIdRes> & DRes>,
+  Entity extends BackSetFields & ID & DRes & Record<keyof RIdRes, unknown>,
   DRes,
-  RIdRes extends { files: ID[] },
+  RIdRes,
 > {
   constructor(
     private readonly repository: ResourceRepository<Entity, DRes, RIdRes>,
   ) {}
 
-  async addOne({ relations, ...all }: CreateDto, req: Request): Promise<ID> {
+  async addOne(
+    { relations, ...rest }: CreateDto,
+    req: Request,
+  ): Promise<Entity> {
     return await this.repository.create(
-      { ...(all as DRes), ...this.getDiscriptionFields(this.getFullUrl(req)) },
+      {
+        ...(rest as DRes),
+        url: this.getUrl(req),
+      },
       relations,
     );
   }
-
-  async getOneById(id: IdDto) {
-    return this.repository.getOneBy(id as FindOptionsWhere<Entity>);
-  }
-  async getMany(pag: PagDto) {
-    return this.repository.getMany(pag);
+  getUrl(req: Request) {
+    return `${req.protocol}://${req.get('Host')}${req.path}`;
   }
 
-  async updateById(id: IdDto, { relations, ...all }: UpdateDto) {
-    return await this.repository.update(
-      id,
-      { ...(all as DRes), edited: new Date().toISOString() },
-      relations,
-    );
+  getOneBy(id: FindOptionsWhere<Entity>): Promise<Entity> {
+    return this.repository.getOneBy(id);
   }
 
-  async deleteById(id: IdDto) {
-    return this.repository.delete(id as FindOptionsWhere<Entity>);
+  getMany(pag: PagDto, req: Request): Promise<Pagination<Entity>> {
+    return this.repository.getMany({ ...pag, route: this.getUrl(req) });
   }
 
-  getFullUrl(req: Request) {
-    return `${req.protocol}://${req.get('Host')}${req.originalUrl}`;
+  patchUpdateBy(
+    id: FindOptionsWhere<Entity>,
+    { relations, ...rest }: UpdateDto,
+  ): Promise<Entity> {
+    return this.repository.update(id, rest as DeepPartial<DRes>, relations);
   }
 
-  getDiscriptionFields(url: string) {
-    const time = new Date().toISOString();
-    return {
-      created: time,
-      edited: time,
-      url,
-    };
+  updateBy(
+    id: FindOptionsWhere<Entity>,
+    { relations, ...rest }: CreateDto,
+  ): Promise<Entity> {
+    return this.repository.update(id, rest as DRes, relations);
+  }
+
+  deleteBy(id: FindOptionsWhere<Entity>): Promise<void> {
+    return this.repository.delete(id);
   }
 }

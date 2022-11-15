@@ -1,14 +1,18 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { IsInt } from 'class-validator';
+import { IsInt, IsOptional, IsPositive } from 'class-validator';
+import { DEFAULT_COUNT } from 'src/app.constants';
 
 export class PagDto {
-  @ApiProperty({ required: false, default: 0 })
+  @ApiProperty({ required: false, default: 1 })
+  @IsInt()
+  @IsOptional()
+  @IsPositive()
+  @Type(() => Number)
+  page: number;
+  @ApiProperty({ required: false, default: DEFAULT_COUNT })
+  @IsOptional()
   @IsInt()
   @Type(() => Number)
-  offset: number;
-  @ApiProperty({ required: false, default: 10 })
-  @IsInt()
-  @Type(() => Number)
-  count: number;
+  limit: number;
 }

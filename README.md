@@ -17,14 +17,31 @@ $ npm install
 ## Running the app
 
 Set all environment variable and constants. Then run the application
+Path to file with environment variable should add to constants(src/app.constants.ts -> ENV_FILE_PATH(default .env))
 
 ```bash
-#Up migrations
+# Building
+$ npm run build
+# Up migrations
 $ npm run migration:run
-#After that you can start
+# Seeding
+$ npm run seed:run
+# After that you can start
 $ npm run start
+```
+
+Start with docker compose
+Set src/app.constants.ts -> ENV_FILE_PATH as .docker-compose.env
+If you want to change app port then you should change a first number at line 30 in docker-compose.yaml(default 80)
+
+```bash
+# Building images
+$ docker-compose build
+# Start app
+$ docker-compose up
+
 ```
 
 ## Documentation
 
-Swagger is used here. Documentation is located on route `/api`
+Swagger is used here. Documentation is located on route `/api/docs`
