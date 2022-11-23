@@ -48,7 +48,7 @@ export class StarshipController {
   @Post()
   @Roles(Role.ADMIN)
   @ApiResponseData(Starship, HttpStatus.CREATED)
-  @ApiOperation({ summary: 'Add one specie' })
+  @ApiOperation({ summary: 'Add one starship' })
   addOne(
     @Body() dto: CreateStarshipDto,
     @Req() req: Request,
@@ -58,7 +58,7 @@ export class StarshipController {
 
   @Get('/:id')
   @ApiResponseData(Starship)
-  @ApiOperation({ summary: 'Get one specie by id' })
+  @ApiOperation({ summary: 'Get one starship by id' })
   @Roles(Role.USER, Role.ADMIN)
   getOneById(@Param() id: IdDto): Promise<IStarship> {
     return this.starshipService.getOneBy(id);
@@ -66,7 +66,7 @@ export class StarshipController {
 
   @Get()
   @ApiPaginatedResponse(Starship)
-  @ApiOperation({ summary: 'Add many species' })
+  @ApiOperation({ summary: 'Get many starships' })
   @Roles(Role.USER, Role.ADMIN)
   getMany(
     @Query(DefaultPagValuePipe) pag: PagDto,
@@ -77,7 +77,7 @@ export class StarshipController {
 
   @Patch('/:id')
   @ApiResponseData(Starship)
-  @ApiOperation({ summary: 'Update one specie by id' })
+  @ApiOperation({ summary: 'Update one starship by id' })
   @Roles(Role.ADMIN)
   patchUpdeteOne(
     @Param() id: IdDto,
@@ -88,7 +88,7 @@ export class StarshipController {
 
   @Put('/:id')
   @ApiResponseData(Starship)
-  @ApiOperation({ summary: 'Update one specie by id' })
+  @ApiOperation({ summary: 'Update one starship by id' })
   @Roles(Role.ADMIN)
   updeteOne(
     @Param() id: IdDto,
@@ -98,7 +98,7 @@ export class StarshipController {
   }
 
   @Delete()
-  @ApiOperation({ summary: 'Delete one specie by id' })
+  @ApiOperation({ summary: 'Delete one starship by id' })
   @ApiNoContentResponse()
   @HttpCode(HttpStatus.NO_CONTENT)
   @Roles(Role.ADMIN)

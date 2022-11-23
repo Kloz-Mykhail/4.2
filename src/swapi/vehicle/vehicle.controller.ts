@@ -53,7 +53,6 @@ export class VehicleController {
     @Body() dto: CreateVehicleDto,
     @Req() req: Request,
   ): Promise<IVehicle> {
-    console.log(dto);
     return this.vehicleService.addOne(dto, req);
   }
 

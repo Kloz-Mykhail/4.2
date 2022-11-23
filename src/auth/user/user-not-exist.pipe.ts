@@ -8,8 +8,8 @@ export class UserNotExistPipe implements PipeTransform {
     @InjectRepository(User)
     private readonly userRepo: Repository<User>,
   ) {}
-  transform(value: { username: string }) {
-    const name = this.userRepo.findOne({
+  async transform(value: { username: string }) {
+    const name = await this.userRepo.findOne({
       where: { username: value.username },
       select: ['username'],
     });

@@ -13,9 +13,10 @@ import {
 } from 'typeorm';
 import { Film } from '../film/film.entity';
 import { People } from '../people/people.entity';
+import { IStarship } from './starship.interface';
 
 @Entity()
-export class Starship {
+export class Starship implements IStarship {
   @ApiProperty({ example: 1 })
   @PrimaryGeneratedColumn()
   id: number;

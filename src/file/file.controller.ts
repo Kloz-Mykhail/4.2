@@ -17,6 +17,7 @@ import { IdDto } from 'src/common/dto/id.dto';
 import {
   ApiBody,
   ApiConsumes,
+  ApiExtraModels,
   ApiNoContentResponse,
   ApiOperation,
   ApiTags,
@@ -27,16 +28,20 @@ import { FILES_FIELD, MAX_COUNT_FILES } from 'src/app.constants';
 import { UploadFileDto } from './dto/upload-file.dto';
 import { Roles } from 'src/auth/role/roles.decorator';
 import { IFile } from './file.interface';
+import { File } from './file.entity';
+import { ApiResponseData } from 'src/common/docs/data-response-api.decorator';
+import { ApiResponseDataArray } from 'src/common/docs/data-response-array.decorator';
 
 @ApiTags('Work with files')
+@ApiExtraModels(File)
 @Controller('files')
 export class FileController {
   constructor(private readonly fileService: FileService) {}
 
   @Post()
-  @HttpCode(HttpStatus.OK)
   @ApiConsumes('multipart/form-data')
   @ApiOperation({ summary: 'Upload file' })
+  @ApiResponseDataArray(File, HttpStatus.CREATED)
   @ApiBody({ type: UploadFileDto })
   @Roles(Role.ADMIN)
   @UseGuards(RoleAuthGuard)
@@ -52,6 +57,7 @@ export class FileController {
 
   @Get(':id')
   @ApiOperation({ summary: 'Get data of file' })
+  @ApiResponseData(File)
   @Roles(Role.USER, Role.ADMIN)
   @UseGuards(RoleAuthGuard)
   getFileData(@Param() dto: IdDto): Promise<IFile> {

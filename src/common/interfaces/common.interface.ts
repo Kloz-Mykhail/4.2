@@ -6,9 +6,6 @@ export interface BackSetFields {
 export interface ID {
   id: number;
 }
-export interface Ok {
-  ok: boolean;
-}
 export interface PagOpt {
   offset: number;
   count: number;

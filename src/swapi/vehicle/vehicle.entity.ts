@@ -13,9 +13,10 @@ import {
 } from 'typeorm';
 import { Film } from '../film/film.entity';
 import { People } from '../people/people.entity';
+import { IVehicle } from './vehicle.interface';
 
 @Entity()
-export class Vehicle {
+export class Vehicle implements IVehicle {
   @ApiProperty({ example: 1 })
   @PrimaryGeneratedColumn()
   id: number;

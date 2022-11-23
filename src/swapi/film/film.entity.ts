@@ -16,9 +16,10 @@ import { Planet } from '../planet/planet.entity';
 import { Specie } from '../specie/specie.entity';
 import { Starship } from '../starship/starship.entity';
 import { Vehicle } from '../vehicle/vehicle.entity';
+import { IFilm } from './film.interface';
 
 @Entity()
-export class Film {
+export class Film implements IFilm {
   @ApiProperty({ example: 1 })
   @PrimaryGeneratedColumn()
   id: number;

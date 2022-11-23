@@ -18,9 +18,10 @@ import { Planet } from '../planet/planet.entity';
 import { Specie } from '../specie/specie.entity';
 import { Starship } from '../starship/starship.entity';
 import { Vehicle } from '../vehicle/vehicle.entity';
+import { IPeople } from './people.interface';
 
 @Entity()
-export class People {
+export class People implements IPeople {
   @ApiProperty({ example: 1 })
   @PrimaryGeneratedColumn()
   id: number;

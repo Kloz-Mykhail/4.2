@@ -1,7 +1,7 @@
 import { HttpStatus, Type } from '@nestjs/common';
 import { ApiResponse, getSchemaPath } from '@nestjs/swagger';
 
-export const ApiResponseData = <TModel extends Type<unknown>>(
+export const ApiResponseDataArray = <TModel extends Type<unknown>>(
   model: TModel,
   status = HttpStatus.OK,
 ) =>
@@ -9,7 +9,10 @@ export const ApiResponseData = <TModel extends Type<unknown>>(
     status,
     schema: {
       properties: {
-        data: { $ref: getSchemaPath(model) },
+        data: {
+          type: 'array',
+          items: { $ref: getSchemaPath(model) },
+        },
       },
     },
   });

@@ -19,7 +19,10 @@ export class GlobalExceptionFilter implements ExceptionFilter {
         : HttpStatus.INTERNAL_SERVER_ERROR;
     const resp = {
       status,
-      name: exception.name,
+      name:
+        this.configServise.get<string>('env') === 'development'
+          ? exception.name
+          : undefined,
       message:
         this.configServise.get<string>('env') === 'development'
           ? exception.message
