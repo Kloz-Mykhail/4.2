@@ -32,26 +32,25 @@ export default class People1668117270029 implements MigrationInterface {
     async function recursiveRunner(url: string): Promise<void> {
       const resp = await axios.get(url).then((response) => response.data);
       resp.results.forEach((el) => {
-        peopleRepo.create(
-          {
-            name: el.name,
-            mass: el.mass,
-            height: el.height,
-            hair_color: el.hair_color,
-            skin_color: el.skin_color,
-            eye_color: el.eye_color,
-            birth_year: el.birth_year,
-            gender: el.gender,
-            url: MY_URL + '/api/people',
-          },
-          {
-            films: getArrayOfId(el.films),
-            homeworld: getArrayOfId([el.homeworld]).at(0),
-            species: getArrayOfId(el.species),
-            starships: getArrayOfId(el.starships),
-            vehicles: getArrayOfId(el.vehicles),
-          },
-        );
+        const fields = {
+          id: getArrayOfId([el.url]).at(0),
+          name: el.name,
+          mass: el.mass,
+          height: el.height,
+          hair_color: el.hair_color,
+          skin_color: el.skin_color,
+          eye_color: el.eye_color,
+          birth_year: el.birth_year,
+          gender: el.gender,
+          url: MY_URL + '/api/people',
+        };
+        peopleRepo.create(fields, {
+          films: getArrayOfId(el.films),
+          homeworld: getArrayOfId([el.homeworld]).at(0),
+          species: getArrayOfId(el.species),
+          starships: getArrayOfId(el.starships),
+          vehicles: getArrayOfId(el.vehicles),
+        });
       });
       if (resp.next) {
         await recursiveRunner(resp.next);

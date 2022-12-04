@@ -26,24 +26,23 @@ export default class Species1668120270029 implements MigrationInterface {
     async function recursiveRunner(url: string): Promise<void> {
       const resp = await axios.get(url).then((response) => response.data);
       resp.results.forEach((el) => {
-        specieRepo.create(
-          {
-            name: el.name,
-            average_height: el.average_height,
-            average_lifespan: el.average_lifespan,
-            classification: el.classification,
-            designation: el.designation,
-            eye_colors: el.eye_colors,
-            hair_colors: el.hair_colors,
-            language: el.language,
-            skin_colors: el.skin_colors,
-            url: MY_URL + '/api/species',
-          },
-          {
-            films: getArrayOfId(el.films),
-            people: getArrayOfId(el.people),
-          },
-        );
+        const fields = {
+          id: getArrayOfId([el.url]).at(0),
+          name: el.name,
+          average_height: el.average_height,
+          average_lifespan: el.average_lifespan,
+          classification: el.classification,
+          designation: el.designation,
+          eye_colors: el.eye_colors,
+          hair_colors: el.hair_colors,
+          language: el.language,
+          skin_colors: el.skin_colors,
+          url: MY_URL + '/api/species',
+        };
+        specieRepo.create(fields, {
+          films: getArrayOfId(el.films),
+          people: getArrayOfId(el.people),
+        });
       });
       if (resp.next) {
         await recursiveRunner(resp.next);

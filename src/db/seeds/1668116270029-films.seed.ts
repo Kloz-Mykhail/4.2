@@ -25,10 +25,14 @@ export default class Films1668116270029 implements MigrationInterface {
       connection.getRepository(Starship),
       connection.getRepository(File),
     );
+    function getArrayOfId(array: Array<string>) {
+      return array.map((el) => +el.split('/').at(-2));
+    }
     async function recursiveRunner(url: string): Promise<void> {
       const resp = await axios.get(url).then((response) => response.data);
       resp.results.forEach((el) => {
-        filmRepo.create({
+        const fields = {
+          id: getArrayOfId([el.url]).at(0),
           director: el.director,
           episode_id: el.episode_id,
           opening_crawl: el.opening_crawl,
@@ -36,7 +40,8 @@ export default class Films1668116270029 implements MigrationInterface {
           release_date: el.release_date,
           title: el.title,
           url: MY_URL + '/api/films',
-        });
+        };
+        filmRepo.create(fields);
       });
       if (resp.next) {
         await recursiveRunner(resp.next);

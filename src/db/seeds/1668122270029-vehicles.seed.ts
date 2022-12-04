@@ -26,26 +26,25 @@ export default class Vehicles1668122270029 implements MigrationInterface {
     async function recursiveRunner(url: string): Promise<void> {
       const resp = await axios.get(url).then((response) => response.data);
       resp.results.forEach((el) => {
-        vehicleRepo.create(
-          {
-            name: el.name,
-            consumables: el.consumables,
-            cargo_capacity: el.cargo_capacity,
-            cost_in_credits: el.cost_in_credits,
-            crew: el.crew,
-            length: el.length,
-            manufacturer: el.manufacturer,
-            max_atmosphering_speed: el.max_atmosphering_speed,
-            model: el.model,
-            passengers: el.passengers,
-            vehicle_class: el.vehicle_class,
-            url: MY_URL + '/api/vehicles',
-          },
-          {
-            films: getArrayOfId(el.films),
-            pilots: getArrayOfId(el.pilots),
-          },
-        );
+        const fields = {
+          id: getArrayOfId([el.url]).at(0),
+          name: el.name,
+          consumables: el.consumables,
+          cargo_capacity: el.cargo_capacity,
+          cost_in_credits: el.cost_in_credits,
+          crew: el.crew,
+          length: el.length,
+          manufacturer: el.manufacturer,
+          max_atmosphering_speed: el.max_atmosphering_speed,
+          model: el.model,
+          passengers: el.passengers,
+          vehicle_class: el.vehicle_class,
+          url: MY_URL + '/api/vehicles',
+        };
+        vehicleRepo.create(fields, {
+          films: getArrayOfId(el.films),
+          pilots: getArrayOfId(el.pilots),
+        });
       });
       if (resp.next) {
         await recursiveRunner(resp.next);

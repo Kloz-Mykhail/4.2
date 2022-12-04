@@ -26,28 +26,27 @@ export default class Starships1668121270029 implements MigrationInterface {
     async function recursiveRunner(url: string): Promise<void> {
       const resp = await axios.get(url).then((response) => response.data);
       resp.results.forEach((el) => {
-        starshipRepo.create(
-          {
-            name: el.name,
-            MGLT: el.MGLT,
-            cargo_capacity: el.cargo_capacity,
-            consumables: el.consumables,
-            cost_in_credits: el.cost_in_credits,
-            crew: el.crew,
-            hyperdrive_rating: el.hyperdrive_rating,
-            length: el.length,
-            manufacturer: el.manufacturer,
-            max_atmosphering_speed: el.max_atmosphering_speed,
-            model: el.model,
-            passengers: el.passengers,
-            starship_class: el.starship_class,
-            url: MY_URL + '/api/starships',
-          },
-          {
-            films: getArrayOfId(el.films),
-            pilots: getArrayOfId(el.pilots),
-          },
-        );
+        const fields = {
+          id: getArrayOfId([el.url]).at(0),
+          name: el.name,
+          MGLT: el.MGLT,
+          cargo_capacity: el.cargo_capacity,
+          consumables: el.consumables,
+          cost_in_credits: el.cost_in_credits,
+          crew: el.crew,
+          hyperdrive_rating: el.hyperdrive_rating,
+          length: el.length,
+          manufacturer: el.manufacturer,
+          max_atmosphering_speed: el.max_atmosphering_speed,
+          model: el.model,
+          passengers: el.passengers,
+          starship_class: el.starship_class,
+          url: MY_URL + '/api/starships',
+        };
+        starshipRepo.create(fields, {
+          films: getArrayOfId(el.films),
+          pilots: getArrayOfId(el.pilots),
+        });
       });
       if (resp.next) {
         await recursiveRunner(resp.next);

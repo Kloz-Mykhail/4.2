@@ -10,7 +10,7 @@ import {
   FindOptionsWhere,
   Repository,
 } from 'typeorm';
-import { BackSetFields, ID, PagOpt, URL } from './interfaces/common.interface';
+import { BackSetFields, ID, URL } from './interfaces/common.interface';
 
 export abstract class ResourceRepository<
   Entity extends BackSetFields & ID & DRes & Record<keyof RIdRes, unknown>,
@@ -22,7 +22,10 @@ export abstract class ResourceRepository<
     private readonly relations: Array<keyof RIdRes & string>,
   ) {}
 
-  async create(discr: DRes & URL, rel?: DeepPartial<RIdRes>): Promise<Entity> {
+  async create(
+    discr: DRes & URL & Partial<ID>,
+    rel?: DeepPartial<RIdRes>,
+  ): Promise<Entity> {
     const { url } = discr;
     let ent = this.repository.create(discr as DeepPartial<Entity>);
     if (rel) {

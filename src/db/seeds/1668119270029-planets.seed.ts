@@ -26,24 +26,23 @@ export default class Planets1668119270029 implements MigrationInterface {
     async function recursiveRunner(url: string): Promise<void> {
       const resp = await axios.get(url).then((response) => response.data);
       resp.results.forEach((el) => {
-        planetRepo.create(
-          {
-            name: el.name,
-            rotation_period: el.rotation_period,
-            orbital_period: el.orbital_period,
-            diameter: el.diameter,
-            climate: el.climate,
-            gravity: el.gravity,
-            terrain: el.terrain,
-            surface_water: el.surface_water,
-            population: el.population,
-            url: MY_URL + '/api/planets',
-          },
-          {
-            films: getArrayOfId(el.films),
-            residents: getArrayOfId(el.residents),
-          },
-        );
+        const fields = {
+          id: getArrayOfId([el.url]).at(0),
+          name: el.name,
+          rotation_period: el.rotation_period,
+          orbital_period: el.orbital_period,
+          diameter: el.diameter,
+          climate: el.climate,
+          gravity: el.gravity,
+          terrain: el.terrain,
+          surface_water: el.surface_water,
+          population: el.population,
+          url: MY_URL + '/api/planets',
+        };
+        planetRepo.create(fields, {
+          films: getArrayOfId(el.films),
+          residents: getArrayOfId(el.residents),
+        });
       });
       if (resp.next) {
         await recursiveRunner(resp.next);
