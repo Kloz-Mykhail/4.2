@@ -26,7 +26,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { IUser } from 'src/auth/user/user.interface';
 import { UserNotExistPipe } from './user/user-not-exist.pipe';
 import { User } from './user/user.entity';
-import { promisify } from 'util';
 import { ApiResponseData } from 'src/common/docs/data-response-api.decorator';
 const ApiUser = OmitType(User, ['password']);
 @ApiTags('Authentication')
@@ -51,7 +50,9 @@ export class AuthController {
   @ApiOperation({ summary: 'Logout' })
   @UseGuards(AuthGuard)
   async logout(@Req() req): Promise<void> {
-    await promisify(req.logOut)();
+    req.logOut((err: Error) => {
+      if (err) throw err;
+    });
   }
 
   @Post('/register')

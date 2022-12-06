@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `people` (
   CONSTRAINT `FK_8f79bb098a482fa585da15ef3a6` FOREIGN KEY (`homeworldId`) REFERENCES `planet` (`id`) ON DELETE
   SET
   NULL
-) ENGINE = InnoDB AUTO_INCREMENT = 83 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 85 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: people_files
@@ -253,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `starship` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `IDX_c2d61780efcb47029ac7792a2c` (`name`)
-) ENGINE = InnoDB AUTO_INCREMENT = 37 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: starships_files
@@ -367,7 +367,7 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `vehicle_class` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `IDX_9d8f33468a4dbf65d2b37370c9` (`name`)
-) ENGINE = InnoDB AUTO_INCREMENT = 40 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 77 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 # ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: vehicles_files
@@ -443,8 +443,8 @@ VALUES
     '1977-05-25',
     'A New Hope',
     'http://localhost:3000/api/films/1',
-    '2022-11-19 19:30:20.428970',
-    '2022-11-19 19:30:20.000000'
+    '2022-12-05 12:28:34.042180',
+    '2022-12-05 12:28:34.000000'
   );
 INSERT INTO
   `film` (
@@ -469,8 +469,8 @@ VALUES
     '1980-05-17',
     'The Empire Strikes Back',
     'http://localhost:3000/api/films/2',
-    '2022-11-19 19:30:20.433672',
-    '2022-11-19 19:30:20.000000'
+    '2022-12-05 12:28:34.045366',
+    '2022-12-05 12:28:34.000000'
   );
 INSERT INTO
   `film` (
@@ -495,8 +495,8 @@ VALUES
     '1983-05-25',
     'Return of the Jedi',
     'http://localhost:3000/api/films/3',
-    '2022-11-19 19:30:20.442111',
-    '2022-11-19 19:30:20.000000'
+    '2022-12-05 12:28:34.048919',
+    '2022-12-05 12:28:34.000000'
   );
 INSERT INTO
   `film` (
@@ -521,8 +521,8 @@ VALUES
     '1999-05-19',
     'The Phantom Menace',
     'http://localhost:3000/api/films/4',
-    '2022-11-19 19:30:20.444510',
-    '2022-11-19 19:30:20.000000'
+    '2022-12-05 12:28:34.053136',
+    '2022-12-05 12:28:34.000000'
   );
 INSERT INTO
   `film` (
@@ -547,8 +547,8 @@ VALUES
     '2002-05-16',
     'Attack of the Clones',
     'http://localhost:3000/api/films/5',
-    '2022-11-19 19:30:20.446676',
-    '2022-11-19 19:30:20.000000'
+    '2022-12-05 12:28:34.055103',
+    '2022-12-05 12:28:34.000000'
   );
 INSERT INTO
   `film` (
@@ -573,8 +573,8 @@ VALUES
     '2005-05-19',
     'Revenge of the Sith',
     'http://localhost:3000/api/films/6',
-    '2022-11-19 19:30:20.449171',
-    '2022-11-19 19:30:20.000000'
+    '2022-12-05 12:28:34.057051',
+    '2022-12-05 12:28:34.000000'
   );
 
 # ------------------------------------------------------------
@@ -589,7 +589,11 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (1, 1);
+  (1, 2);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (1, 3);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -621,7 +625,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (1, 11);
+  (1, 12);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -641,15 +645,23 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
+  (1, 18);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
   (1, 19);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (1, 20);
+  (1, 81);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (1, 72);
+  (2, 2);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (2, 3);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -661,19 +673,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (2, 6);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (2, 9);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
   (2, 10);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (2, 12);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -681,11 +681,11 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (2, 17);
+  (2, 14);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (2, 19);
+  (2, 18);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -694,6 +694,10 @@ INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
   (2, 21);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (2, 22);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -713,6 +717,14 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
+  (3, 2);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (3, 3);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
   (3, 4);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
@@ -721,19 +733,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (3, 6);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (3, 9);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
   (3, 10);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (3, 12);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -741,15 +741,15 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (3, 15);
+  (3, 14);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (3, 17);
+  (3, 16);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (3, 19);
+  (3, 18);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -757,15 +757,15 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
+  (3, 21);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
   (3, 22);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (3, 23);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (3, 26);
+  (3, 25);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -785,11 +785,19 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (3, 44);
+  (3, 31);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 4);
+  (3, 45);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (4, 2);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (4, 3);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -797,23 +805,19 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 12);
+  (4, 11);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 15);
+  (4, 16);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 17);
+  (4, 20);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 18);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (4, 31);
+  (4, 21);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -865,7 +869,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 45);
+  (4, 44);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -886,6 +890,10 @@ INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
   (4, 50);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (4, 51);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -917,15 +925,23 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (4, 60);
+  (4, 59);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 1);
+  (5, 2);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 4);
+  (5, 3);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (5, 6);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (5, 7);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -933,19 +949,19 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 12);
+  (5, 11);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 17);
+  (5, 20);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 18);
+  (5, 21);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 23);
+  (5, 22);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -953,19 +969,15 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 34);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
   (5, 35);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 39);
+  (5, 36);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 42);
+  (5, 40);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -973,7 +985,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 45);
+  (5, 46);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1045,6 +1057,10 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
+  (5, 72);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
   (5, 73);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
@@ -1069,11 +1085,15 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (5, 81);
+  (5, 82);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 1);
+  (6, 2);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (6, 3);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1089,7 +1109,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 9);
+  (6, 7);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1105,11 +1125,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 17);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (6, 18);
+  (6, 13);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1117,19 +1133,23 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
+  (6, 21);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
   (6, 33);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 34);
+  (6, 35);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 43);
+  (6, 46);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 45);
+  (6, 51);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1153,7 +1173,7 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 60);
+  (6, 58);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1169,15 +1189,11 @@ VALUES
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 69);
+  (6, 68);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
-  (6, 71);
-INSERT INTO
-  `films_people` (`filmId`, `peopleId`)
-VALUES
-  (6, 72);
+  (6, 75);
 INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
@@ -1198,6 +1214,10 @@ INSERT INTO
   `films_people` (`filmId`, `peopleId`)
 VALUES
   (6, 82);
+INSERT INTO
+  `films_people` (`filmId`, `peopleId`)
+VALUES
+  (6, 83);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: people
@@ -1221,19 +1241,51 @@ INSERT INTO
   )
 VALUES
   (
-    1,
-    'Owen Lars',
-    '120',
-    '178',
-    'brown, grey',
-    'light',
-    'blue',
-    '52BBY',
-    'male',
-    '2022-11-19 19:30:21.338396',
-    '2022-11-19 19:30:25.000000',
-    'http://localhost:3000/api/people/1',
-    4
+    2,
+    'C-3PO',
+    '75',
+    '167',
+    'n/a',
+    'gold',
+    'yellow',
+    '112BBY',
+    'n/a',
+    '2022-12-05 12:28:34.669846',
+    '2022-12-05 12:28:38.000000',
+    'http://localhost:3000/api/people/2',
+    1
+  );
+INSERT INTO
+  `people` (
+    `id`,
+    `name`,
+    `mass`,
+    `height`,
+    `hair_color`,
+    `skin_color`,
+    `eye_color`,
+    `birth_year`,
+    `gender`,
+    `created`,
+    `edited`,
+    `url`,
+    `homeworldId`
+  )
+VALUES
+  (
+    3,
+    'R2-D2',
+    '32',
+    '96',
+    'n/a',
+    'white, blue',
+    'red',
+    '33BBY',
+    'n/a',
+    '2022-12-05 12:28:34.673476',
+    '2022-12-05 12:28:38.000000',
+    'http://localhost:3000/api/people/3',
+    8
   );
 INSERT INTO
   `people` (
@@ -1254,18 +1306,18 @@ INSERT INTO
 VALUES
   (
     4,
-    'R2-D2',
-    '32',
-    '96',
-    'n/a',
-    'white, blue',
-    'red',
-    '33BBY',
-    'n/a',
-    '2022-11-19 19:30:21.382474',
-    '2022-11-19 19:30:25.000000',
+    'Darth Vader',
+    '136',
+    '202',
+    'none',
+    'white',
+    'yellow',
+    '41.9BBY',
+    'male',
+    '2022-12-05 12:28:34.676092',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/4',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -1286,18 +1338,18 @@ INSERT INTO
 VALUES
   (
     5,
-    'Darth Vader',
-    '136',
-    '202',
-    'none',
-    'white',
-    'yellow',
-    '41.9BBY',
-    'male',
-    '2022-11-19 19:30:21.384096',
-    '2022-11-19 19:30:25.000000',
+    'Leia Organa',
+    '49',
+    '150',
+    'brown',
+    'light',
+    'brown',
+    '19BBY',
+    'female',
+    '2022-12-05 12:28:34.677301',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/5',
-    5
+    2
   );
 INSERT INTO
   `people` (
@@ -1318,18 +1370,18 @@ INSERT INTO
 VALUES
   (
     6,
-    'Leia Organa',
-    '49',
-    '150',
-    'brown',
+    'Owen Lars',
+    '120',
+    '178',
+    'brown, grey',
     'light',
-    'brown',
-    '19BBY',
-    'female',
-    '2022-11-19 19:30:21.385405',
-    '2022-11-19 19:30:25.000000',
+    'blue',
+    '52BBY',
+    'male',
+    '2022-12-05 12:28:34.609983',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/6',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -1350,18 +1402,18 @@ INSERT INTO
 VALUES
   (
     7,
-    'R5-D4',
-    '32',
-    '97',
-    'n/a',
-    'white, red',
-    'red',
-    'unknown',
-    'n/a',
-    '2022-11-19 19:30:21.391345',
-    '2022-11-19 19:30:25.000000',
+    'Beru Whitesun lars',
+    '75',
+    '165',
+    'brown',
+    'light',
+    'blue',
+    '47BBY',
+    'female',
+    '2022-12-05 12:28:34.612292',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/7',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -1382,18 +1434,18 @@ INSERT INTO
 VALUES
   (
     8,
-    'Biggs Darklighter',
-    '84',
-    '183',
-    'black',
-    'light',
-    'brown',
-    '24BBY',
-    'male',
-    '2022-11-19 19:30:21.394445',
-    '2022-11-19 19:30:25.000000',
+    'R5-D4',
+    '32',
+    '97',
+    'n/a',
+    'white, red',
+    'red',
+    'unknown',
+    'n/a',
+    '2022-12-05 12:28:34.684427',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/8',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -1414,18 +1466,18 @@ INSERT INTO
 VALUES
   (
     9,
-    'Luke Skywalker',
-    '77',
-    '172',
-    'blond',
-    'fair',
-    'blue',
-    '19BBY',
+    'Biggs Darklighter',
+    '84',
+    '183',
+    'black',
+    'light',
+    'brown',
+    '24BBY',
     'male',
-    '2022-11-19 19:30:21.398787',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:34.686791',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/9',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -1454,10 +1506,10 @@ VALUES
     'blue-gray',
     '57BBY',
     'male',
-    '2022-11-19 19:30:21.418530',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:34.712630',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/10',
-    16
+    20
   );
 INSERT INTO
   `people` (
@@ -1478,18 +1530,18 @@ INSERT INTO
 VALUES
   (
     11,
-    'Wilhuff Tarkin',
-    'unknown',
-    '180',
-    'auburn, grey',
+    'Anakin Skywalker',
+    '84',
+    '188',
+    'blond',
     'fair',
     'blue',
-    '64BBY',
+    '41.9BBY',
     'male',
-    '2022-11-19 19:30:21.825457',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.095607',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/11',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -1510,18 +1562,18 @@ INSERT INTO
 VALUES
   (
     12,
-    'Palpatine',
-    '75',
-    '170',
-    'grey',
-    'pale',
-    'yellow',
-    '82BBY',
+    'Wilhuff Tarkin',
+    'unknown',
+    '180',
+    'auburn, grey',
+    'fair',
+    'blue',
+    '64BBY',
     'male',
-    '2022-11-19 19:30:21.861175',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.043979',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/12',
-    23
+    21
   );
 INSERT INTO
   `people` (
@@ -1542,18 +1594,18 @@ INSERT INTO
 VALUES
   (
     13,
-    'Han Solo',
-    '80',
-    '180',
+    'Chewbacca',
+    '112',
+    '228',
     'brown',
-    'fair',
-    'brown',
-    '29BBY',
+    'unknown',
+    'blue',
+    '200BBY',
     'male',
-    '2022-11-19 19:30:21.873558',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.127260',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/13',
-    19
+    14
   );
 INSERT INTO
   `people` (
@@ -1574,18 +1626,18 @@ INSERT INTO
 VALUES
   (
     14,
-    'Greedo',
-    '74',
-    '173',
-    'n/a',
-    'green',
-    'black',
-    '44BBY',
+    'Han Solo',
+    '80',
+    '180',
+    'brown',
+    'fair',
+    'brown',
+    '29BBY',
     'male',
-    '2022-11-19 19:30:21.878048',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.074455',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/14',
-    24
+    22
   );
 INSERT INTO
   `people` (
@@ -1606,18 +1658,18 @@ INSERT INTO
 VALUES
   (
     15,
-    'Jabba Desilijic Tiure',
-    '1,358',
-    '175',
+    'Greedo',
+    '74',
+    '173',
     'n/a',
-    'green-tan, brown',
-    'orange',
-    '600BBY',
-    'hermaphrodite',
-    '2022-11-19 19:30:21.879692',
-    '2022-11-19 19:30:26.000000',
+    'green',
+    'black',
+    '44BBY',
+    'male',
+    '2022-12-05 12:28:35.076867',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/15',
-    25
+    23
   );
 INSERT INTO
   `people` (
@@ -1638,81 +1690,17 @@ INSERT INTO
 VALUES
   (
     16,
-    'Jek Tono Porkins',
-    '110',
-    '180',
-    'brown',
-    'fair',
-    'blue',
-    'unknown',
-    'male',
-    '2022-11-19 19:30:21.883322',
-    '2022-11-19 19:30:26.000000',
+    'Jabba Desilijic Tiure',
+    '1,358',
+    '175',
+    'n/a',
+    'green-tan, brown',
+    'orange',
+    '600BBY',
+    'hermaphrodite',
+    '2022-12-05 12:28:35.078330',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/16',
-    26
-  );
-INSERT INTO
-  `people` (
-    `id`,
-    `name`,
-    `mass`,
-    `height`,
-    `hair_color`,
-    `skin_color`,
-    `eye_color`,
-    `birth_year`,
-    `gender`,
-    `created`,
-    `edited`,
-    `url`,
-    `homeworldId`
-  )
-VALUES
-  (
-    17,
-    'Yoda',
-    '17',
-    '66',
-    'white',
-    'green',
-    'brown',
-    '896BBY',
-    'male',
-    '2022-11-19 19:30:21.885878',
-    '2022-11-19 19:30:22.000000',
-    'http://localhost:3000/api/people/17',
-    NULL
-  );
-INSERT INTO
-  `people` (
-    `id`,
-    `name`,
-    `mass`,
-    `height`,
-    `hair_color`,
-    `skin_color`,
-    `eye_color`,
-    `birth_year`,
-    `gender`,
-    `created`,
-    `edited`,
-    `url`,
-    `homeworldId`
-  )
-VALUES
-  (
-    18,
-    'Anakin Skywalker',
-    '84',
-    '188',
-    'blond',
-    'fair',
-    'blue',
-    '41.9BBY',
-    'male',
-    '2022-11-19 19:30:21.888750',
-    '2022-11-19 19:30:26.000000',
-    'http://localhost:3000/api/people/18',
     24
   );
 INSERT INTO
@@ -1733,7 +1721,7 @@ INSERT INTO
   )
 VALUES
   (
-    19,
+    18,
     'Wedge Antilles',
     '77',
     '170',
@@ -1742,10 +1730,42 @@ VALUES
     'hazel',
     '21BBY',
     'male',
-    '2022-11-19 19:30:21.902002',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.107519',
+    '2022-12-05 12:28:38.000000',
+    'http://localhost:3000/api/people/18',
+    22
+  );
+INSERT INTO
+  `people` (
+    `id`,
+    `name`,
+    `mass`,
+    `height`,
+    `hair_color`,
+    `skin_color`,
+    `eye_color`,
+    `birth_year`,
+    `gender`,
+    `created`,
+    `edited`,
+    `url`,
+    `homeworldId`
+  )
+VALUES
+  (
+    19,
+    'Jek Tono Porkins',
+    '110',
+    '180',
+    'brown',
+    'fair',
+    'blue',
+    'unknown',
+    'male',
+    '2022-12-05 12:28:35.081309',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/19',
-    27
+    26
   );
 INSERT INTO
   `people` (
@@ -1766,16 +1786,16 @@ INSERT INTO
 VALUES
   (
     20,
-    'Chewbacca',
-    '112',
-    '228',
+    'Yoda',
+    '17',
+    '66',
+    'white',
+    'green',
     'brown',
-    'unknown',
-    'blue',
-    '200BBY',
+    '896BBY',
     'male',
-    '2022-11-19 19:30:21.913424',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.084161',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/20',
     28
   );
@@ -1798,16 +1818,16 @@ INSERT INTO
 VALUES
   (
     21,
-    'Lobot',
-    '79',
-    '175',
-    'none',
-    'light',
-    'blue',
-    '37BBY',
+    'Palpatine',
+    '75',
+    '170',
+    'grey',
+    'pale',
+    'yellow',
+    '82BBY',
     'male',
-    '2022-11-19 19:30:22.249703',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.061547',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/21',
     8
   );
@@ -1830,16 +1850,16 @@ INSERT INTO
 VALUES
   (
     22,
-    'Mon Mothma',
-    'unknown',
-    '150',
-    'auburn',
+    'Boba Fett',
+    '78.2',
+    '183',
+    'black',
     'fair',
-    'blue',
-    '48BBY',
-    'female',
-    '2022-11-19 19:30:22.253810',
-    '2022-11-19 19:30:25.000000',
+    'brown',
+    '31.5BBY',
+    'male',
+    '2022-12-05 12:28:35.437112',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/22',
     10
   );
@@ -1862,16 +1882,16 @@ INSERT INTO
 VALUES
   (
     23,
-    'Boba Fett',
-    '78.2',
-    '183',
-    'black',
-    'fair',
-    'brown',
-    '31.5BBY',
-    'male',
-    '2022-11-19 19:30:22.264025',
-    '2022-11-19 19:30:26.000000',
+    'IG-88',
+    '140',
+    '200',
+    'none',
+    'metal',
+    'red',
+    '15BBY',
+    'none',
+    '2022-12-05 12:28:35.437521',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/23',
     28
   );
@@ -1894,16 +1914,16 @@ INSERT INTO
 VALUES
   (
     24,
-    'IG-88',
-    '140',
-    '200',
+    'Bossk',
+    '113',
+    '190',
     'none',
-    'metal',
+    'green',
     'red',
-    '15BBY',
-    'none',
-    '2022-11-19 19:30:22.267064',
-    '2022-11-19 19:30:26.000000',
+    '53BBY',
+    'male',
+    '2022-12-05 12:28:35.439789',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/24',
     29
   );
@@ -1926,16 +1946,16 @@ INSERT INTO
 VALUES
   (
     25,
-    'Bossk',
-    '113',
-    '190',
-    'none',
-    'green',
-    'red',
-    '53BBY',
+    'Lando Calrissian',
+    '79',
+    '177',
+    'black',
+    'dark',
+    'brown',
+    '31BBY',
     'male',
-    '2022-11-19 19:30:22.268553',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.442281',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/25',
     30
   );
@@ -1958,16 +1978,16 @@ INSERT INTO
 VALUES
   (
     26,
-    'Lando Calrissian',
+    'Lobot',
     '79',
-    '177',
-    'black',
-    'dark',
-    'brown',
-    '31BBY',
+    '175',
+    'none',
+    'light',
+    'blue',
+    '37BBY',
     'male',
-    '2022-11-19 19:30:22.269877',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.417610',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/26',
     6
   );
@@ -1998,8 +2018,8 @@ VALUES
     'orange',
     '41BBY',
     'male',
-    '2022-11-19 19:30:22.273745',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.445119',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/27',
     31
   );
@@ -2022,16 +2042,16 @@ INSERT INTO
 VALUES
   (
     28,
-    'Arvel Crynyd',
+    'Mon Mothma',
     'unknown',
-    'unknown',
-    'brown',
+    '150',
+    'auburn',
     'fair',
-    'brown',
-    'unknown',
-    'male',
-    '2022-11-19 19:30:22.276698',
-    '2022-11-19 19:30:26.000000',
+    'blue',
+    '48BBY',
+    'female',
+    '2022-12-05 12:28:35.422444',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/28',
     32
   );
@@ -2054,16 +2074,16 @@ INSERT INTO
 VALUES
   (
     29,
-    'Wicket Systri Warrick',
-    '20',
-    '88',
+    'Arvel Crynyd',
+    'unknown',
+    'unknown',
     'brown',
+    'fair',
     'brown',
-    'brown',
-    '8BBY',
+    'unknown',
     'male',
-    '2022-11-19 19:30:22.277942',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.447008',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/29',
     28
   );
@@ -2086,16 +2106,16 @@ INSERT INTO
 VALUES
   (
     30,
-    'Nien Nunb',
-    '68',
-    '160',
-    'none',
-    'grey',
-    'black',
-    'unknown',
+    'Wicket Systri Warrick',
+    '20',
+    '88',
+    'brown',
+    'brown',
+    'brown',
+    '8BBY',
     'male',
-    '2022-11-19 19:30:22.296657',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.448073',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/30',
     7
   );
@@ -2118,16 +2138,16 @@ INSERT INTO
 VALUES
   (
     31,
-    'Finis Valorum',
+    'Nien Nunb',
+    '68',
+    '160',
+    'none',
+    'grey',
+    'black',
     'unknown',
-    '170',
-    'blond',
-    'fair',
-    'blue',
-    '91BBY',
     'male',
-    '2022-11-19 19:30:22.743361',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.494494',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/31',
     33
   );
@@ -2158,8 +2178,8 @@ VALUES
     'blue',
     '92BBY',
     'male',
-    '2022-11-19 19:30:22.761193',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.837125',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/32',
     28
   );
@@ -2190,10 +2210,10 @@ VALUES
     'red',
     'unknown',
     'male',
-    '2022-11-19 19:30:22.763034',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.837415',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/33',
-    20
+    18
   );
 INSERT INTO
   `people` (
@@ -2214,16 +2234,16 @@ INSERT INTO
 VALUES
   (
     34,
-    'Padmé Amidala',
-    '45',
-    '185',
-    'brown',
-    'light',
-    'brown',
-    '46BBY',
-    'female',
-    '2022-11-19 19:30:22.765617',
-    '2022-11-19 19:30:25.000000',
+    'Finis Valorum',
+    'unknown',
+    '170',
+    'blond',
+    'fair',
+    'blue',
+    '91BBY',
+    'male',
+    '2022-12-05 12:28:35.772883',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/34',
     9
   );
@@ -2246,16 +2266,16 @@ INSERT INTO
 VALUES
   (
     35,
-    'Jar Jar Binks',
-    '66',
-    '196',
-    'none',
-    'orange',
-    'orange',
-    '52BBY',
-    'male',
-    '2022-11-19 19:30:22.766849',
-    '2022-11-19 19:30:25.000000',
+    'Padmé Amidala',
+    '45',
+    '185',
+    'brown',
+    'light',
+    'brown',
+    '46BBY',
+    'female',
+    '2022-12-05 12:28:35.841271',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/35',
     8
   );
@@ -2278,16 +2298,16 @@ INSERT INTO
 VALUES
   (
     36,
-    'Roos Tarpals',
-    '82',
-    '224',
+    'Jar Jar Binks',
+    '66',
+    '196',
     'none',
-    'grey',
     'orange',
-    'unknown',
+    'orange',
+    '52BBY',
     'male',
-    '2022-11-19 19:30:22.768180',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.842483',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/36',
     8
   );
@@ -2310,16 +2330,16 @@ INSERT INTO
 VALUES
   (
     37,
-    'Rugor Nass',
-    'unknown',
-    '206',
+    'Roos Tarpals',
+    '82',
+    '224',
     'none',
-    'green',
+    'grey',
     'orange',
     'unknown',
     'male',
-    '2022-11-19 19:30:22.769660',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.843733',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/37',
     8
   );
@@ -2342,16 +2362,16 @@ INSERT INTO
 VALUES
   (
     38,
-    'Ric Olié',
+    'Rugor Nass',
     'unknown',
-    '183',
-    'brown',
-    'fair',
-    'blue',
+    '206',
+    'none',
+    'green',
+    'orange',
     'unknown',
     'male',
-    '2022-11-19 19:30:22.771220',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.844983',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/38',
     8
   );
@@ -2374,16 +2394,16 @@ INSERT INTO
 VALUES
   (
     39,
-    'Watto',
+    'Ric Olié',
     'unknown',
-    '137',
-    'black',
-    'blue, grey',
-    'yellow',
+    '183',
+    'brown',
+    'fair',
+    'blue',
     'unknown',
     'male',
-    '2022-11-19 19:30:22.772532',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:35.846073',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/39',
     8
   );
@@ -2406,16 +2426,16 @@ INSERT INTO
 VALUES
   (
     40,
-    'Sebulba',
-    '40',
-    '112',
-    'none',
-    'grey, red',
-    'orange',
+    'Watto',
+    'unknown',
+    '137',
+    'black',
+    'blue, grey',
+    'yellow',
     'unknown',
     'male',
-    '2022-11-19 19:30:22.774940',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.847287',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/40',
     34
   );
@@ -2438,16 +2458,16 @@ INSERT INTO
 VALUES
   (
     41,
-    'Quarsh Panaka',
+    'Sebulba',
+    '40',
+    '112',
+    'none',
+    'grey, red',
+    'orange',
     'unknown',
-    '183',
-    'black',
-    'dark',
-    'brown',
-    '62BBY',
     'male',
-    '2022-11-19 19:30:23.255673',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:35.848758',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/41',
     35
   );
@@ -2470,16 +2490,16 @@ INSERT INTO
 VALUES
   (
     42,
-    'Shmi Skywalker',
+    'Quarsh Panaka',
     'unknown',
-    '163',
+    '183',
     'black',
-    'fair',
+    'dark',
     'brown',
-    '72BBY',
-    'female',
-    '2022-11-19 19:30:23.259281',
-    '2022-11-19 19:30:25.000000',
+    '62BBY',
+    'male',
+    '2022-12-05 12:28:36.020020',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/42',
     8
   );
@@ -2502,18 +2522,18 @@ INSERT INTO
 VALUES
   (
     43,
-    'Mace Windu',
-    '84',
-    '188',
-    'none',
-    'dark',
+    'Shmi Skywalker',
+    'unknown',
+    '163',
+    'black',
+    'fair',
     'brown',
     '72BBY',
-    'male',
-    '2022-11-19 19:30:23.283357',
-    '2022-11-19 19:30:25.000000',
+    'female',
+    '2022-12-05 12:28:36.025954',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/43',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -2534,16 +2554,16 @@ INSERT INTO
 VALUES
   (
     44,
-    'Bib Fortuna',
-    'unknown',
-    '180',
+    'Darth Maul',
+    '80',
+    '175',
     'none',
-    'pale',
-    'pink',
-    'unknown',
+    'red',
+    'yellow',
+    '54BBY',
     'male',
-    '2022-11-19 19:30:23.292378',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:36.124563',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/44',
     36
   );
@@ -2566,16 +2586,16 @@ INSERT INTO
 VALUES
   (
     45,
-    'Ayla Secura',
-    '55',
-    '178',
+    'Bib Fortuna',
+    'unknown',
+    '180',
     'none',
-    'blue',
-    'hazel',
-    '48BBY',
-    'female',
-    '2022-11-19 19:30:23.296330',
-    '2022-11-19 19:30:26.000000',
+    'pale',
+    'pink',
+    'unknown',
+    'male',
+    '2022-12-05 12:28:36.075879',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/45',
     37
   );
@@ -2598,16 +2618,16 @@ INSERT INTO
 VALUES
   (
     46,
-    'Ratts Tyerel',
-    '15',
-    '79',
+    'Ayla Secura',
+    '55',
+    '178',
     'none',
-    'grey, blue',
-    'unknown',
-    'unknown',
-    'male',
-    '2022-11-19 19:30:23.298274',
-    '2022-11-19 19:30:26.000000',
+    'blue',
+    'hazel',
+    '48BBY',
+    'female',
+    '2022-12-05 12:28:36.077641',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/46',
     37
   );
@@ -2630,16 +2650,16 @@ INSERT INTO
 VALUES
   (
     47,
-    'Dud Bolt',
-    '45',
-    '94',
+    'Ratts Tyerel',
+    '15',
+    '79',
     'none',
-    'blue, grey',
-    'yellow',
+    'grey, blue',
+    'unknown',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.299784',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:36.078674',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/47',
     38
   );
@@ -2662,16 +2682,16 @@ INSERT INTO
 VALUES
   (
     48,
-    'Gasgano',
-    'unknown',
-    '122',
+    'Dud Bolt',
+    '45',
+    '94',
     'none',
-    'white, blue',
-    'black',
+    'blue, grey',
+    'yellow',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.301724',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:36.079591',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/48',
     39
   );
@@ -2694,16 +2714,16 @@ INSERT INTO
 VALUES
   (
     49,
-    'Ben Quadinaros',
-    '65',
-    '163',
+    'Gasgano',
+    'unknown',
+    '122',
     'none',
-    'grey, green, yellow',
-    'orange',
+    'white, blue',
+    'black',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.303525',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:36.080465',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/49',
     40
   );
@@ -2726,18 +2746,18 @@ INSERT INTO
 VALUES
   (
     50,
-    'Darth Maul',
-    '80',
-    '175',
+    'Ben Quadinaros',
+    '65',
+    '163',
     'none',
-    'red',
-    'yellow',
-    '54BBY',
+    'grey, green, yellow',
+    'orange',
+    'unknown',
     'male',
-    '2022-11-19 19:30:23.353405',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.081803',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/50',
-    42
+    41
   );
 INSERT INTO
   `people` (
@@ -2758,18 +2778,18 @@ INSERT INTO
 VALUES
   (
     51,
-    'Cordé',
-    'unknown',
-    '157',
+    'Mace Windu',
+    '84',
+    '188',
+    'none',
+    'dark',
     'brown',
-    'light',
-    'brown',
-    'unknown',
-    'female',
-    '2022-11-19 19:30:23.739186',
-    '2022-11-19 19:30:27.000000',
+    '72BBY',
+    'male',
+    '2022-12-05 12:28:36.044683',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/51',
-    43
+    42
   );
 INSERT INTO
   `people` (
@@ -2798,10 +2818,10 @@ VALUES
     'yellow',
     '92BBY',
     'male',
-    '2022-11-19 19:30:23.742249',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.463321',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/52',
-    44
+    43
   );
 INSERT INTO
   `people` (
@@ -2830,10 +2850,10 @@ VALUES
     'black',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.743674',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.464225',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/53',
-    45
+    44
   );
 INSERT INTO
   `people` (
@@ -2862,10 +2882,10 @@ VALUES
     'brown',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.746121',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.466291',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/54',
-    46
+    45
   );
 INSERT INTO
   `people` (
@@ -2894,8 +2914,8 @@ VALUES
     'blue',
     'unknown',
     'female',
-    '2022-11-19 19:30:23.747472',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:36.468738',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/55',
     9
   );
@@ -2926,8 +2946,8 @@ VALUES
     'orange',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.748761',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.469827',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/56',
     47
   );
@@ -2958,8 +2978,8 @@ VALUES
     'yellow',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.750058',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.470826',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/57',
     48
   );
@@ -2982,16 +3002,16 @@ INSERT INTO
 VALUES
   (
     58,
-    'Mas Amedda',
-    'unknown',
-    '196',
+    'Plo Koon',
+    '80',
+    '188',
     'none',
-    'blue',
-    'blue',
-    'unknown',
+    'orange',
+    'black',
+    '22BBY',
     'male',
-    '2022-11-19 19:30:23.752487',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.487236',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/58',
     49
   );
@@ -3014,16 +3034,16 @@ INSERT INTO
 VALUES
   (
     59,
-    'Gregar Typho',
-    '85',
-    '185',
-    'black',
-    'dark',
-    'brown',
+    'Mas Amedda',
+    'unknown',
+    '196',
+    'none',
+    'blue',
+    'blue',
     'unknown',
     'male',
-    '2022-11-19 19:30:23.754260',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.474653',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/59',
     50
   );
@@ -3046,16 +3066,16 @@ INSERT INTO
 VALUES
   (
     60,
-    'Plo Koon',
-    '80',
-    '188',
-    'none',
-    'orange',
+    'Gregar Typho',
+    '85',
+    '185',
     'black',
-    '22BBY',
+    'dark',
+    'brown',
+    'unknown',
     'male',
-    '2022-11-19 19:30:23.765067',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:36.475901',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/60',
     8
   );
@@ -3078,16 +3098,16 @@ INSERT INTO
 VALUES
   (
     61,
-    'Cliegg Lars',
+    'Cordé',
     'unknown',
-    '183',
+    '157',
     'brown',
-    'fair',
-    'blue',
-    '82BBY',
-    'male',
-    '2022-11-19 19:30:24.207181',
-    '2022-11-19 19:30:25.000000',
+    'light',
+    'brown',
+    'unknown',
+    'female',
+    '2022-12-05 12:28:36.460814',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/61',
     8
   );
@@ -3110,18 +3130,18 @@ INSERT INTO
 VALUES
   (
     62,
-    'Jango Fett',
-    '79',
+    'Cliegg Lars',
+    'unknown',
     '183',
-    'black',
-    'tan',
     'brown',
-    '66BBY',
+    'fair',
+    'blue',
+    '82BBY',
     'male',
-    '2022-11-19 19:30:24.226427',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:36.894079',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/62',
-    4
+    1
   );
 INSERT INTO
   `people` (
@@ -3150,10 +3170,10 @@ VALUES
     'yellow',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.237039',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:36.918007',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/63',
-    17
+    11
   );
 INSERT INTO
   `people` (
@@ -3182,8 +3202,8 @@ VALUES
     'blue',
     '58BBY',
     'female',
-    '2022-11-19 19:30:24.238219',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.919844',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/64',
     51
   );
@@ -3214,8 +3234,8 @@ VALUES
     'blue',
     '40BBY',
     'female',
-    '2022-11-19 19:30:24.240598',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.921044',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/65',
     51
   );
@@ -3246,8 +3266,8 @@ VALUES
     'brown',
     'unknown',
     'female',
-    '2022-11-19 19:30:24.243160',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:36.922077',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/66',
     8
   );
@@ -3270,16 +3290,16 @@ INSERT INTO
 VALUES
   (
     67,
-    'Bail Prestor Organa',
-    'unknown',
-    '191',
-    'black',
-    'tan',
+    'Dooku',
+    '80',
+    '193',
+    'white',
+    'fair',
     'brown',
-    '67BBY',
+    '102BBY',
     'male',
-    '2022-11-19 19:30:24.246502',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.940384',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/67',
     52
   );
@@ -3302,18 +3322,18 @@ INSERT INTO
 VALUES
   (
     68,
-    'Dexter Jettster',
-    '102',
-    '198',
-    'none',
-    'brown',
-    'yellow',
+    'Bail Prestor Organa',
     'unknown',
+    '191',
+    'black',
+    'tan',
+    'brown',
+    '67BBY',
     'male',
-    '2022-11-19 19:30:24.251390',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:36.924634',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/68',
-    5
+    2
   );
 INSERT INTO
   `people` (
@@ -3334,16 +3354,16 @@ INSERT INTO
 VALUES
   (
     69,
-    'Dooku',
-    '80',
-    '193',
-    'white',
-    'fair',
+    'Jango Fett',
+    '79',
+    '183',
+    'black',
+    'tan',
     'brown',
-    '102BBY',
+    '66BBY',
     'male',
-    '2022-11-19 19:30:24.263090',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.910080',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/69',
     53
   );
@@ -3374,8 +3394,8 @@ VALUES
     'yellow',
     'unknown',
     'female',
-    '2022-11-19 19:30:24.267051',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:36.944215',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/70',
     54
   );
@@ -3398,16 +3418,16 @@ INSERT INTO
 VALUES
   (
     71,
-    'R4-P17',
-    'unknown',
-    '96',
+    'Dexter Jettster',
+    '102',
+    '198',
     'none',
-    'silver, red',
-    'red, blue',
+    'brown',
+    'yellow',
     'unknown',
-    'female',
-    '2022-11-19 19:30:24.643627',
-    '2022-11-19 19:30:27.000000',
+    'male',
+    '2022-12-05 12:28:36.928462',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/71',
     55
   );
@@ -3430,16 +3450,16 @@ INSERT INTO
 VALUES
   (
     72,
-    'Raymus Antilles',
-    '79',
-    '188',
-    'brown',
-    'light',
-    'brown',
+    'Lama Su',
+    '88',
+    '229',
+    'none',
+    'grey',
+    'black',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.657489',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:37.304167',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/72',
     10
   );
@@ -3462,16 +3482,16 @@ INSERT INTO
 VALUES
   (
     73,
-    'Lama Su',
-    '88',
-    '229',
+    'Taun We',
+    'unknown',
+    '213',
     'none',
     'grey',
     'black',
     'unknown',
-    'male',
-    '2022-11-19 19:30:24.661648',
-    '2022-11-19 19:30:25.000000',
+    'female',
+    '2022-12-05 12:28:37.306437',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/73',
     10
   );
@@ -3494,16 +3514,16 @@ INSERT INTO
 VALUES
   (
     74,
-    'Taun We',
+    'Jocasta Nu',
     'unknown',
-    '213',
-    'none',
-    'grey',
-    'black',
+    '167',
+    'white',
+    'fair',
+    'blue',
     'unknown',
     'female',
-    '2022-11-19 19:30:24.663326',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:37.308376',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/74',
     9
   );
@@ -3526,16 +3546,16 @@ INSERT INTO
 VALUES
   (
     75,
-    'Jocasta Nu',
+    'R4-P17',
     'unknown',
-    '167',
-    'white',
-    'fair',
-    'blue',
+    '96',
+    'none',
+    'silver, red',
+    'red, blue',
     'unknown',
     'female',
-    '2022-11-19 19:30:24.664734',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:37.290920',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/75',
     28
   );
@@ -3566,8 +3586,8 @@ VALUES
     'unknown',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.668471',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:37.311403',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/76',
     56
   );
@@ -3598,8 +3618,8 @@ VALUES
     'gold',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.669994',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:37.312645',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/77',
     57
   );
@@ -3630,8 +3650,8 @@ VALUES
     'black',
     'unknown',
     'female',
-    '2022-11-19 19:30:24.671514',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:37.314497',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/78',
     58
   );
@@ -3654,16 +3674,16 @@ INSERT INTO
 VALUES
   (
     79,
-    'Tarfful',
-    '136',
-    '234',
-    'brown',
-    'brown',
-    'blue',
+    'Grievous',
+    '159',
+    '216',
+    'none',
+    'brown, white',
+    'green, yellow',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.675834',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:37.395540',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/people/79',
     59
   );
@@ -3686,18 +3706,18 @@ INSERT INTO
 VALUES
   (
     80,
-    'Grievous',
-    '159',
-    '216',
-    'none',
-    'brown, white',
-    'green, yellow',
+    'Tarfful',
+    '136',
+    '234',
+    'brown',
+    'brown',
+    'blue',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.787736',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:37.318473',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/80',
-    19
+    14
   );
 INSERT INTO
   `people` (
@@ -3718,18 +3738,18 @@ INSERT INTO
 VALUES
   (
     81,
-    'Sly Moore',
-    '48',
-    '178',
-    'none',
-    'pale',
-    'white',
+    'Raymus Antilles',
+    '79',
+    '188',
+    'brown',
+    'light',
+    'brown',
     'unknown',
-    'female',
-    '2022-11-19 19:30:24.965563',
-    '2022-11-19 19:30:25.000000',
+    'male',
+    '2022-12-05 12:28:37.301611',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/people/81',
-    5
+    2
   );
 INSERT INTO
   `people` (
@@ -3750,6 +3770,38 @@ INSERT INTO
 VALUES
   (
     82,
+    'Sly Moore',
+    '48',
+    '178',
+    'none',
+    'pale',
+    'white',
+    'unknown',
+    'female',
+    '2022-12-05 12:28:37.552584',
+    '2022-12-05 12:28:39.000000',
+    'http://localhost:3000/api/people/82',
+    60
+  );
+INSERT INTO
+  `people` (
+    `id`,
+    `name`,
+    `mass`,
+    `height`,
+    `hair_color`,
+    `skin_color`,
+    `eye_color`,
+    `birth_year`,
+    `gender`,
+    `created`,
+    `edited`,
+    `url`,
+    `homeworldId`
+  )
+VALUES
+  (
+    83,
     'Tion Medon',
     '80',
     '206',
@@ -3758,10 +3810,10 @@ VALUES
     'black',
     'unknown',
     'male',
-    '2022-11-19 19:30:24.970571',
-    '2022-11-19 19:30:27.000000',
-    'http://localhost:3000/api/people/82',
-    60
+    '2022-12-05 12:28:37.557328',
+    '2022-12-05 12:28:38.000000',
+    'http://localhost:3000/api/people/83',
+    12
   );
 
 # ------------------------------------------------------------
@@ -3792,17 +3844,17 @@ INSERT INTO
 VALUES
   (
     1,
-    'Yavin IV',
-    '24',
-    '4818',
-    '10200',
-    'temperate, tropical',
+    'Tatooine',
+    '23',
+    '304',
+    '10465',
+    'arid',
     '1 standard',
-    'jungle, rainforests',
-    '8',
-    '1000',
-    '2022-11-19 19:30:25.470174',
-    '2022-11-19 19:30:25.000000',
+    'desert',
+    '1',
+    '200000',
+    '2022-12-05 12:28:37.983143',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/1'
   );
 INSERT INTO
@@ -3824,17 +3876,17 @@ INSERT INTO
 VALUES
   (
     2,
-    'Hoth',
-    '23',
-    '549',
-    '7200',
-    'frozen',
-    '1.1 standard',
-    'tundra, ice caves, mountain ranges',
-    '100',
-    'unknown',
-    '2022-11-19 19:30:25.472811',
-    '2022-11-19 19:30:25.000000',
+    'Alderaan',
+    '24',
+    '364',
+    '12500',
+    'temperate',
+    '1 standard',
+    'grasslands, mountains',
+    '40',
+    '2000000000',
+    '2022-12-05 12:28:37.985022',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/2'
   );
 INSERT INTO
@@ -3856,17 +3908,17 @@ INSERT INTO
 VALUES
   (
     3,
-    'Dagobah',
-    '23',
-    '341',
-    '8900',
-    'murky',
-    'N/A',
-    'swamp, jungles',
+    'Yavin IV',
+    '24',
+    '4818',
+    '10200',
+    'temperate, tropical',
+    '1 standard',
+    'jungle, rainforests',
     '8',
-    'unknown',
-    '2022-11-19 19:30:25.475261',
-    '2022-11-19 19:30:25.000000',
+    '1000',
+    '2022-12-05 12:28:37.966851',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/3'
   );
 INSERT INTO
@@ -3888,17 +3940,17 @@ INSERT INTO
 VALUES
   (
     4,
-    'Tatooine',
+    'Hoth',
     '23',
-    '304',
-    '10465',
-    'arid',
-    '1 standard',
-    'desert',
-    '1',
-    '200000',
-    '2022-11-19 19:30:25.494167',
-    '2022-11-19 19:30:25.000000',
+    '549',
+    '7200',
+    'frozen',
+    '1.1 standard',
+    'tundra, ice caves, mountain ranges',
+    '100',
+    'unknown',
+    '2022-12-05 12:28:37.968322',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/4'
   );
 INSERT INTO
@@ -3920,17 +3972,17 @@ INSERT INTO
 VALUES
   (
     5,
-    'Alderaan',
-    '24',
-    '364',
-    '12500',
-    'temperate',
-    '1 standard',
-    'grasslands, mountains',
-    '40',
-    '2000000000',
-    '2022-11-19 19:30:25.496279',
-    '2022-11-19 19:30:25.000000',
+    'Dagobah',
+    '23',
+    '341',
+    '8900',
+    'murky',
+    'N/A',
+    'swamp, jungles',
+    '8',
+    'unknown',
+    '2022-12-05 12:28:37.969777',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/5'
   );
 INSERT INTO
@@ -3961,8 +4013,8 @@ VALUES
     'gas giant',
     '0',
     '6000000',
-    '2022-11-19 19:30:25.501812',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:37.999871',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/6'
   );
 INSERT INTO
@@ -3993,8 +4045,8 @@ VALUES
     'forests, mountains, lakes',
     '8',
     '30000000',
-    '2022-11-19 19:30:25.503333',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:38.012313',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/7'
   );
 INSERT INTO
@@ -4025,8 +4077,8 @@ VALUES
     'grassy hills, swamps, forests, mountains',
     '12',
     '4500000000',
-    '2022-11-19 19:30:25.504812',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:38.018566',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/8'
   );
 INSERT INTO
@@ -4057,8 +4109,8 @@ VALUES
     'cityscape, mountains',
     'unknown',
     '1000000000000',
-    '2022-11-19 19:30:25.507074',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:38.020487',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/9'
   );
 INSERT INTO
@@ -4089,8 +4141,8 @@ VALUES
     'ocean',
     '100',
     '1000000000',
-    '2022-11-19 19:30:25.509533',
-    '2022-11-19 19:30:25.000000',
+    '2022-12-05 12:28:38.021874',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/10'
   );
 INSERT INTO
@@ -4112,17 +4164,17 @@ INSERT INTO
 VALUES
   (
     11,
-    'Mustafar',
-    '36',
-    '412',
-    '4200',
-    'hot',
-    '1 standard',
-    'volcanoes, lava rivers, mountains, caves',
-    '0',
-    '20000',
-    '2022-11-19 19:30:25.803579',
-    '2022-11-19 19:30:25.000000',
+    'Geonosis',
+    '30',
+    '256',
+    '11370',
+    'temperate, arid',
+    '0.9 standard',
+    'rock, desert, mountain, barren',
+    '5',
+    '100000000000',
+    '2022-12-05 12:28:38.329026',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/11'
   );
 INSERT INTO
@@ -4144,17 +4196,17 @@ INSERT INTO
 VALUES
   (
     12,
-    'Polis Massa',
-    '24',
-    '590',
-    '0',
-    'artificial temperate ',
-    '0.56 standard',
-    'airless asteroid',
-    '0',
-    '1000000',
-    '2022-11-19 19:30:25.813709',
-    '2022-11-19 19:30:25.000000',
+    'Utapau',
+    '27',
+    '351',
+    '12900',
+    'temperate, arid, windy',
+    '1 standard',
+    'scrublands, savanna, canyons, sinkholes',
+    '0.9',
+    '95000000',
+    '2022-12-05 12:28:38.330251',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/12'
   );
 INSERT INTO
@@ -4176,17 +4228,17 @@ INSERT INTO
 VALUES
   (
     13,
-    'Mygeeto',
-    '12',
-    '167',
-    '10088',
-    'frigid',
+    'Mustafar',
+    '36',
+    '412',
+    '4200',
+    'hot',
     '1 standard',
-    'glaciers, mountains, ice canyons',
-    'unknown',
-    '19000000',
-    '2022-11-19 19:30:25.816003',
-    '2022-11-19 19:30:25.000000',
+    'volcanoes, lava rivers, mountains, caves',
+    '0',
+    '20000',
+    '2022-12-05 12:28:38.313738',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/13'
   );
 INSERT INTO
@@ -4208,17 +4260,17 @@ INSERT INTO
 VALUES
   (
     14,
-    'Felucia',
-    '34',
-    '231',
-    '9100',
-    'hot, humid',
-    '0.75 standard',
-    'fungus forests',
-    'unknown',
-    '8500000',
-    '2022-11-19 19:30:25.817682',
-    '2022-11-19 19:30:25.000000',
+    'Kashyyyk',
+    '26',
+    '381',
+    '12765',
+    'tropical',
+    '1 standard',
+    'jungle, forests, lakes, rivers',
+    '60',
+    '45000000',
+    '2022-12-05 12:28:38.333894',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/14'
   );
 INSERT INTO
@@ -4240,17 +4292,17 @@ INSERT INTO
 VALUES
   (
     15,
-    'Saleucami',
-    '26',
-    '392',
-    '14920',
-    'hot',
-    'unknown',
-    'caves, desert, mountains, volcanoes',
-    'unknown',
-    '1400000000',
-    '2022-11-19 19:30:25.820836',
-    '2022-11-19 19:30:25.000000',
+    'Polis Massa',
+    '24',
+    '590',
+    '0',
+    'artificial temperate ',
+    '0.56 standard',
+    'airless asteroid',
+    '0',
+    '1000000',
+    '2022-12-05 12:28:38.319131',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/15'
   );
 INSERT INTO
@@ -4272,17 +4324,17 @@ INSERT INTO
 VALUES
   (
     16,
-    'Stewjon',
-    'unknown',
-    'unknown',
-    '0',
-    'temperate',
+    'Mygeeto',
+    '12',
+    '167',
+    '10088',
+    'frigid',
     '1 standard',
-    'grass',
+    'glaciers, mountains, ice canyons',
     'unknown',
-    'unknown',
-    '2022-11-19 19:30:25.823947',
-    '2022-11-19 19:30:25.000000',
+    '19000000',
+    '2022-12-05 12:28:38.321170',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/16'
   );
 INSERT INTO
@@ -4304,17 +4356,17 @@ INSERT INTO
 VALUES
   (
     17,
-    'Geonosis',
-    '30',
-    '256',
-    '11370',
-    'temperate, arid',
-    '0.9 standard',
-    'rock, desert, mountain, barren',
-    '5',
-    '100000000000',
-    '2022-11-19 19:30:25.826128',
-    '2022-11-19 19:30:26.000000',
+    'Felucia',
+    '34',
+    '231',
+    '9100',
+    'hot, humid',
+    '0.75 standard',
+    'fungus forests',
+    'unknown',
+    '8500000',
+    '2022-12-05 12:28:38.323193',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/17'
   );
 INSERT INTO
@@ -4336,17 +4388,17 @@ INSERT INTO
 VALUES
   (
     18,
-    'Utapau',
-    '27',
-    '351',
-    '12900',
-    'temperate, arid, windy',
+    'Cato Neimoidia',
+    '25',
+    '278',
+    '0',
+    'temperate, moist',
     '1 standard',
-    'scrublands, savanna, canyons, sinkholes',
-    '0.9',
-    '95000000',
-    '2022-11-19 19:30:25.827751',
-    '2022-11-19 19:30:25.000000',
+    'mountains, fields, forests, rock arches',
+    'unknown',
+    '10000000',
+    '2022-12-05 12:28:38.341857',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/18'
   );
 INSERT INTO
@@ -4368,17 +4420,17 @@ INSERT INTO
 VALUES
   (
     19,
-    'Kashyyyk',
+    'Saleucami',
     '26',
-    '381',
-    '12765',
-    'tropical',
-    '1 standard',
-    'jungle, forests, lakes, rivers',
-    '60',
-    '45000000',
-    '2022-11-19 19:30:25.830978',
-    '2022-11-19 19:30:26.000000',
+    '392',
+    '14920',
+    'hot',
+    'unknown',
+    'caves, desert, mountains, volcanoes',
+    'unknown',
+    '1400000000',
+    '2022-12-05 12:28:38.326182',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/19'
   );
 INSERT INTO
@@ -4400,17 +4452,17 @@ INSERT INTO
 VALUES
   (
     20,
-    'Cato Neimoidia',
-    '25',
-    '278',
-    '0',
-    'temperate, moist',
-    '1 standard',
-    'mountains, fields, forests, rock arches',
+    'Stewjon',
     'unknown',
-    '10000000',
-    '2022-11-19 19:30:25.835566',
-    '2022-11-19 19:30:26.000000',
+    'unknown',
+    '0',
+    'temperate',
+    '1 standard',
+    'grass',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:38.327871',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/20'
   );
 INSERT INTO
@@ -4432,17 +4484,17 @@ INSERT INTO
 VALUES
   (
     21,
-    'Dantooine',
-    '25',
-    '378',
-    '9830',
-    'temperate',
+    'Eriadu',
+    '24',
+    '360',
+    '13490',
+    'polluted',
     '1 standard',
-    'oceans, savannas, mountains, grasslands',
+    'cityscape',
     'unknown',
-    '1000',
-    '2022-11-19 19:30:26.402104',
-    '2022-11-19 19:30:26.000000',
+    '22000000000',
+    '2022-12-05 12:28:38.588853',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/21'
   );
 INSERT INTO
@@ -4464,17 +4516,17 @@ INSERT INTO
 VALUES
   (
     22,
-    'Ord Mantell',
-    '26',
-    '334',
-    '14050',
+    'Corellia',
+    '25',
+    '329',
+    '11000',
     'temperate',
     '1 standard',
-    'plains, seas, mesas',
-    '10',
-    '4000000000',
-    '2022-11-19 19:30:26.403765',
-    '2022-11-19 19:30:26.000000',
+    'plains, urban, hills, forests',
+    '70',
+    '3000000000',
+    '2022-12-05 12:28:38.591265',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/22'
   );
 INSERT INTO
@@ -4496,17 +4548,17 @@ INSERT INTO
 VALUES
   (
     23,
-    'Eriadu',
-    '24',
-    '360',
-    '13490',
-    'polluted',
+    'Rodia',
+    '29',
+    '305',
+    '7549',
+    'hot',
     '1 standard',
-    'cityscape',
-    'unknown',
-    '22000000000',
-    '2022-11-19 19:30:26.404881',
-    '2022-11-19 19:30:26.000000',
+    'jungles, oceans, urban, swamps',
+    '60',
+    '1300000000',
+    '2022-12-05 12:28:38.595440',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/23'
   );
 INSERT INTO
@@ -4528,17 +4580,17 @@ INSERT INTO
 VALUES
   (
     24,
-    'Corellia',
-    '25',
-    '329',
-    '11000',
+    'Nal Hutta',
+    '87',
+    '413',
+    '12150',
     'temperate',
     '1 standard',
-    'plains, urban, hills, forests',
-    '70',
-    '3000000000',
-    '2022-11-19 19:30:26.406940',
-    '2022-11-19 19:30:26.000000',
+    'urban, oceans, swamps, bogs',
+    'unknown',
+    '7000000000',
+    '2022-12-05 12:28:38.597683',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/24'
   );
 INSERT INTO
@@ -4560,17 +4612,17 @@ INSERT INTO
 VALUES
   (
     25,
-    'Rodia',
-    '29',
-    '305',
-    '7549',
-    'hot',
+    'Dantooine',
+    '25',
+    '378',
+    '9830',
+    'temperate',
     '1 standard',
-    'jungles, oceans, urban, swamps',
-    '60',
-    '1300000000',
-    '2022-11-19 19:30:26.408613',
-    '2022-11-19 19:30:26.000000',
+    'oceans, savannas, mountains, grasslands',
+    'unknown',
+    '1000',
+    '2022-12-05 12:28:38.586011',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/25'
   );
 INSERT INTO
@@ -4592,17 +4644,17 @@ INSERT INTO
 VALUES
   (
     26,
-    'Nal Hutta',
-    '87',
-    '413',
-    '12150',
+    'Bestine IV',
+    '26',
+    '680',
+    '6400',
     'temperate',
-    '1 standard',
-    'urban, oceans, swamps, bogs',
     'unknown',
-    '7000000000',
-    '2022-11-19 19:30:26.410308',
-    '2022-11-19 19:30:26.000000',
+    'rocky islands, oceans',
+    '98',
+    '62000000',
+    '2022-12-05 12:28:38.600102',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/26'
   );
 INSERT INTO
@@ -4624,17 +4676,17 @@ INSERT INTO
 VALUES
   (
     27,
-    'Bestine IV',
+    'Ord Mantell',
     '26',
-    '680',
-    '6400',
+    '334',
+    '14050',
     'temperate',
-    'unknown',
-    'rocky islands, oceans',
-    '98',
-    '62000000',
-    '2022-11-19 19:30:26.411635',
-    '2022-11-19 19:30:26.000000',
+    '1 standard',
+    'plains, seas, mesas',
+    '10',
+    '4000000000',
+    '2022-12-05 12:28:38.587363',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/27'
   );
 INSERT INTO
@@ -4665,8 +4717,8 @@ VALUES
     'unknown',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:26.412936',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:38.603164',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/28'
   );
 INSERT INTO
@@ -4697,8 +4749,8 @@ VALUES
     'mountains, seas, grasslands, deserts',
     'unknown',
     '42000000',
-    '2022-11-19 19:30:26.414077',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:38.606969',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/29'
   );
 INSERT INTO
@@ -4729,8 +4781,8 @@ VALUES
     'deserts, mountains',
     'unknown',
     '300000000',
-    '2022-11-19 19:30:26.415133',
-    '2022-11-19 19:30:26.000000',
+    '2022-12-05 12:28:38.609084',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/30'
   );
 INSERT INTO
@@ -4761,8 +4813,8 @@ VALUES
     'oceans, reefs, islands',
     '100',
     '27000000000',
-    '2022-11-19 19:30:26.885118',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.801961',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/31'
   );
 INSERT INTO
@@ -4793,8 +4845,8 @@ VALUES
     'plains, forests',
     '40',
     '1200000000',
-    '2022-11-19 19:30:26.887540',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.803543',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/32'
   );
 INSERT INTO
@@ -4825,8 +4877,8 @@ VALUES
     'mountains, volcanoes, rocky deserts',
     '5',
     '18500000000',
-    '2022-11-19 19:30:26.889368',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.805782',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/33'
   );
 INSERT INTO
@@ -4857,8 +4909,8 @@ VALUES
     'swamps, lakes',
     'unknown',
     '11000000',
-    '2022-11-19 19:30:26.891566',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.807957',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/34'
   );
 INSERT INTO
@@ -4889,8 +4941,8 @@ VALUES
     'swamps, deserts, jungles, mountains',
     'unknown',
     '2000000000',
-    '2022-11-19 19:30:26.893179',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.809234',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/35'
   );
 INSERT INTO
@@ -4921,8 +4973,8 @@ VALUES
     'forests, deserts, savannas',
     'unknown',
     '5200',
-    '2022-11-19 19:30:26.894841',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.810432',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/36'
   );
 INSERT INTO
@@ -4953,8 +5005,8 @@ VALUES
     'mountains, valleys, deserts, tundra',
     '5',
     '1500000000',
-    '2022-11-19 19:30:26.896334',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.811693',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/37'
   );
 INSERT INTO
@@ -4985,8 +5037,8 @@ VALUES
     'unknown',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:26.897808',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.812963',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/38'
   );
 INSERT INTO
@@ -5017,8 +5069,8 @@ VALUES
     'urban, barren',
     'unknown',
     '421000000',
-    '2022-11-19 19:30:26.899228',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.814222',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/39'
   );
 INSERT INTO
@@ -5049,8 +5101,8 @@ VALUES
     'desert, tundra, rainforests, mountains',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:26.900707',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:38.816509',
+    '2022-12-05 12:28:38.000000',
     'http://localhost:3000/api/planets/40'
   );
 INSERT INTO
@@ -5072,17 +5124,17 @@ INSERT INTO
 VALUES
   (
     41,
-    'Tholoth',
+    'Tund',
+    '48',
+    '1770',
+    '12190',
     'unknown',
     'unknown',
+    'barren, ash',
     'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    '2022-11-19 19:30:27.333831',
-    '2022-11-19 19:30:27.000000',
+    '0',
+    '2022-12-05 12:28:39.042582',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/41'
   );
 INSERT INTO
@@ -5104,17 +5156,17 @@ INSERT INTO
 VALUES
   (
     42,
-    'Tund',
-    '48',
-    '1770',
-    '12190',
+    'Haruun Kal',
+    '25',
+    '383',
+    '10120',
+    'temperate',
+    '0.98',
+    'toxic cloudsea, plateaus, volcanoes',
     'unknown',
-    'unknown',
-    'barren, ash',
-    'unknown',
-    '0',
-    '2022-11-19 19:30:27.336246',
-    '2022-11-19 19:30:27.000000',
+    '705300',
+    '2022-12-05 12:28:39.043837',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/42'
   );
 INSERT INTO
@@ -5136,17 +5188,17 @@ INSERT INTO
 VALUES
   (
     43,
-    'Haruun Kal',
-    '25',
-    '383',
-    '10120',
-    'temperate',
-    '0.98',
-    'toxic cloudsea, plateaus, volcanoes',
+    'Cerea',
+    '27',
+    '386',
     'unknown',
-    '705300',
-    '2022-11-19 19:30:27.337963',
-    '2022-11-19 19:30:27.000000',
+    'temperate',
+    '1',
+    'verdant',
+    '20',
+    '450000000',
+    '2022-12-05 12:28:39.045088',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/43'
   );
 INSERT INTO
@@ -5168,17 +5220,17 @@ INSERT INTO
 VALUES
   (
     44,
-    'Cerea',
-    '27',
-    '386',
-    'unknown',
-    'temperate',
+    'Glee Anselm',
+    '33',
+    '206',
+    '15600',
+    'tropical, temperate',
     '1',
-    'verdant',
-    '20',
-    '450000000',
-    '2022-11-19 19:30:27.341366',
-    '2022-11-19 19:30:27.000000',
+    'lakes, islands, swamps, seas',
+    '80',
+    '500000000',
+    '2022-12-05 12:28:39.046623',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/44'
   );
 INSERT INTO
@@ -5200,17 +5252,17 @@ INSERT INTO
 VALUES
   (
     45,
-    'Glee Anselm',
-    '33',
-    '206',
-    '15600',
-    'tropical, temperate',
-    '1',
-    'lakes, islands, swamps, seas',
-    '80',
-    '500000000',
-    '2022-11-19 19:30:27.343632',
-    '2022-11-19 19:30:27.000000',
+    'Iridonia',
+    '29',
+    '413',
+    'unknown',
+    'unknown',
+    'unknown',
+    'rocky canyons, acid pools',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:39.051601',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/45'
   );
 INSERT INTO
@@ -5232,17 +5284,17 @@ INSERT INTO
 VALUES
   (
     46,
-    'Iridonia',
-    '29',
-    '413',
+    'Tholoth',
     'unknown',
     'unknown',
     'unknown',
-    'rocky canyons, acid pools',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.345414',
-    '2022-11-19 19:30:27.000000',
+    'unknown',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:39.040852',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/46'
   );
 INSERT INTO
@@ -5273,8 +5325,8 @@ VALUES
     'rocky',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.347114',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.054033',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/47'
   );
 INSERT INTO
@@ -5305,8 +5357,8 @@ VALUES
     'unknown',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.349076',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.055435',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/48'
   );
 INSERT INTO
@@ -5337,8 +5389,8 @@ VALUES
     'unknown',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.350927',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.056682',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/49'
   );
 INSERT INTO
@@ -5369,8 +5421,8 @@ VALUES
     'oceans, rainforests, plateaus',
     'unknown',
     '3500000000',
-    '2022-11-19 19:30:27.352365',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.057940',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/50'
   );
 INSERT INTO
@@ -5401,8 +5453,8 @@ VALUES
     'deserts',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.831757',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.295109',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/51'
   );
 INSERT INTO
@@ -5433,8 +5485,8 @@ VALUES
     'rainforests, rivers, mountains',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.834511',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.296617',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/52'
   );
 INSERT INTO
@@ -5465,8 +5517,8 @@ VALUES
     'jungles, forests, deserts',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.836137',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.298573',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/53'
   );
 INSERT INTO
@@ -5497,8 +5549,8 @@ VALUES
     'unknown',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.837817',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.300780',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/54'
   );
 INSERT INTO
@@ -5529,8 +5581,8 @@ VALUES
     'oceans, glaciers',
     '100',
     '500000000',
-    '2022-11-19 19:30:27.840930',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.302569',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/55'
   );
 INSERT INTO
@@ -5561,8 +5613,8 @@ VALUES
     'urban, vines',
     'unknown',
     '500000000000',
-    '2022-11-19 19:30:27.843532',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.304010',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/56'
   );
 INSERT INTO
@@ -5593,8 +5645,8 @@ VALUES
     'plains, forests, hills, mountains',
     '25',
     '5000000000',
-    '2022-11-19 19:30:27.845139',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.305472',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/57'
   );
 INSERT INTO
@@ -5625,8 +5677,8 @@ VALUES
     'cities, savannahs, seas, plains',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.847014',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.308000',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/58'
   );
 INSERT INTO
@@ -5657,8 +5709,8 @@ VALUES
     'rainforests, cliffs, canyons, seas',
     'unknown',
     '4000000000',
-    '2022-11-19 19:30:27.848674',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.309561',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/59'
   );
 INSERT INTO
@@ -5689,8 +5741,8 @@ VALUES
     'unknown',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:27.850596',
-    '2022-11-19 19:30:27.000000',
+    '2022-12-05 12:28:39.310678',
+    '2022-12-05 12:28:39.000000',
     'http://localhost:3000/api/planets/60'
   );
 
@@ -5710,43 +5762,43 @@ VALUES
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (2, 2);
+  (1, 3);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (3, 2);
+  (1, 4);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (3, 3);
+  (1, 5);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (3, 6);
+  (1, 6);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (4, 1);
+  (2, 1);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (4, 3);
+  (2, 6);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (4, 4);
+  (3, 1);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (4, 5);
+  (4, 2);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (4, 6);
+  (5, 2);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (5, 1);
+  (5, 3);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
@@ -5798,7 +5850,7 @@ VALUES
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (11, 6);
+  (11, 5);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
@@ -5818,7 +5870,11 @@ VALUES
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (17, 5);
+  (16, 6);
+INSERT INTO
+  `planets_films` (`planetId`, `filmId`)
+VALUES
+  (17, 6);
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
@@ -5830,11 +5886,7 @@ VALUES
 INSERT INTO
   `planets_films` (`planetId`, `filmId`)
 VALUES
-  (20, 6);
-INSERT INTO
-  `planets_films` (`planetId`, `filmId`)
-VALUES
-  (22, 2);
+  (27, 2);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: role
@@ -5875,8 +5927,8 @@ VALUES
     '180',
     '120',
     'mammal',
-    '2022-11-19 19:30:28.455644',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.811598',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'brown, blue, green, hazel, grey, amber',
     'blonde, brown, black, red',
@@ -5907,8 +5959,8 @@ VALUES
     'n/a',
     'indefinite',
     'artificial',
-    '2022-11-19 19:30:28.458717',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.813349',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'n/a',
     'n/a',
@@ -5939,8 +5991,8 @@ VALUES
     '210',
     '400',
     'mammal',
-    '2022-11-19 19:30:28.462935',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.814877',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'blue, green, yellow, brown, golden, red',
     'black, brown',
@@ -5971,8 +6023,8 @@ VALUES
     '170',
     'unknown',
     'sentient',
-    '2022-11-19 19:30:28.464906',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.818424',
+    '2022-12-05 12:28:40.000000',
     'reptilian',
     'black',
     'n/a',
@@ -6003,8 +6055,8 @@ VALUES
     '300',
     '1000',
     'gastropod',
-    '2022-11-19 19:30:28.466180',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.820270',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow, red',
     'n/a',
@@ -6035,8 +6087,8 @@ VALUES
     '66',
     '900',
     'mammal',
-    '2022-11-19 19:30:28.468064',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.842462',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'brown, green, yellow',
     'brown, white',
@@ -6067,8 +6119,8 @@ VALUES
     '200',
     'unknown',
     'reptile',
-    '2022-11-19 19:30:28.469704',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.853790',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow, orange',
     'none',
@@ -6099,8 +6151,8 @@ VALUES
     '160',
     'unknown',
     'amphibian',
-    '2022-11-19 19:30:28.471486',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.856024',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -6131,8 +6183,8 @@ VALUES
     '100',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:28.473378',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.858383',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'orange, brown',
     'white, brown, black',
@@ -6163,8 +6215,8 @@ VALUES
     '180',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:28.474749',
-    '2022-11-19 19:30:28.000000',
+    '2022-12-05 12:28:39.860013',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black',
     'none',
@@ -6195,8 +6247,8 @@ VALUES
     '180',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:28.941363',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.110921',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'red, pink',
     'none',
@@ -6227,8 +6279,8 @@ VALUES
     '190',
     'unknown',
     'amphibian',
-    '2022-11-19 19:30:28.946590',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.112238',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'orange',
     'none',
@@ -6259,8 +6311,8 @@ VALUES
     '120',
     '91',
     'mammal',
-    '2022-11-19 19:30:28.949619',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.113366',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -6291,8 +6343,8 @@ VALUES
     '100',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:28.952713',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.114788',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow, blue',
     'none',
@@ -6323,8 +6375,8 @@ VALUES
     '200',
     'unknown',
     'mammals',
-    '2022-11-19 19:30:28.961602',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.117975',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'blue, brown, orange, pink',
     'none',
@@ -6355,8 +6407,8 @@ VALUES
     '80',
     '79',
     'reptile',
-    '2022-11-19 19:30:28.965061',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.119225',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'unknown',
     'none',
@@ -6387,8 +6439,8 @@ VALUES
     '100',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:28.967898',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.120113',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -6419,8 +6471,8 @@ VALUES
     '125',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:28.971462',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.121078',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black',
     'none',
@@ -6451,8 +6503,8 @@ VALUES
     '200',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:28.978076',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.122076',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'orange',
     'none',
@@ -6483,8 +6535,8 @@ VALUES
     '200',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:28.979926',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.123028',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'hazel',
     'red, blond, black, white',
@@ -6515,8 +6567,8 @@ VALUES
     '180',
     '70',
     'amphibian',
-    '2022-11-19 19:30:29.474963',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.368923',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black',
     'none',
@@ -6547,8 +6599,8 @@ VALUES
     '180',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:29.477267',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.370149',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'brown, orange',
     'black',
@@ -6579,8 +6631,8 @@ VALUES
     'unknown',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:29.478756',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.371502',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'blue, indigo',
     'unknown',
@@ -6611,8 +6663,8 @@ VALUES
     '180',
     'unknown',
     'unknown',
-    '2022-11-19 19:30:29.480457',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.373885',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'orange',
     'none',
@@ -6643,8 +6695,8 @@ VALUES
     '240',
     '86',
     'mammal',
-    '2022-11-19 19:30:29.482046',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.375004',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -6675,8 +6727,8 @@ VALUES
     '180',
     '70',
     'unknown',
-    '2022-11-19 19:30:29.483427',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.375956',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black, silver',
     'none',
@@ -6707,8 +6759,8 @@ VALUES
     '190',
     'unknown',
     'amphibian',
-    '2022-11-19 19:30:29.484606',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.376837',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'blue',
     'none',
@@ -6739,8 +6791,8 @@ VALUES
     '178',
     'unknown',
     'insectoid',
-    '2022-11-19 19:30:29.486005',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.377727',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'green, hazel',
     'none',
@@ -6771,8 +6823,8 @@ VALUES
     '180',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:29.487243',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.378578',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'blue, green, red, yellow, brown, orange',
     'black, brown',
@@ -6803,8 +6855,8 @@ VALUES
     '180',
     '70',
     'reptilian',
-    '2022-11-19 19:30:29.489176',
-    '2022-11-19 19:30:29.000000',
+    '2022-12-05 12:28:40.379418',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -6835,8 +6887,8 @@ VALUES
     '178',
     '75',
     'amphibian',
-    '2022-11-19 19:30:29.958445',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.657817',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -6867,8 +6919,8 @@ VALUES
     '220',
     '80',
     'amphibian',
-    '2022-11-19 19:30:29.960604',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.659415',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black',
     'none',
@@ -6899,8 +6951,8 @@ VALUES
     'unknown',
     'unknown',
     'mammal',
-    '2022-11-19 19:30:29.962029',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.660534',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'unknown',
     'none',
@@ -6931,8 +6983,8 @@ VALUES
     '190',
     '100',
     'mammal',
-    '2022-11-19 19:30:29.963616',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.661841',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black',
     'none',
@@ -6963,8 +7015,8 @@ VALUES
     '180',
     '94',
     'mammal',
-    '2022-11-19 19:30:29.965311',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.663092',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'red, orange, yellow, green, blue, black',
     'none',
@@ -6995,8 +7047,8 @@ VALUES
     '170',
     '80',
     'reptile',
-    '2022-11-19 19:30:29.967083',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.664277',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'yellow',
     'none',
@@ -7027,8 +7079,8 @@ VALUES
     '190',
     '700',
     'mammal',
-    '2022-11-19 19:30:29.968570',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:40.666050',
+    '2022-12-05 12:28:40.000000',
     'sentient',
     'black',
     'none',
@@ -7363,6 +7415,14 @@ VALUES
 INSERT INTO
   `species_people` (`specieId`, `peopleId`)
 VALUES
+  (2, 2);
+INSERT INTO
+  `species_people` (`specieId`, `peopleId`)
+VALUES
+  (2, 3);
+INSERT INTO
+  `species_people` (`specieId`, `peopleId`)
+VALUES
   (2, 8);
 INSERT INTO
   `species_people` (`specieId`, `peopleId`)
@@ -7532,6 +7592,10 @@ INSERT INTO
   `species_people` (`specieId`, `peopleId`)
 VALUES
   (36, 79);
+INSERT INTO
+  `species_people` (`specieId`, `peopleId`)
+VALUES
+  (37, 83);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: starship
@@ -7559,14 +7623,14 @@ INSERT INTO
   )
 VALUES
   (
-    1,
+    2,
     '60',
     '3000000',
     '1 year',
     '3500000',
     '30-165',
-    '2022-11-19 19:30:30.527742',
-    '2022-11-19 19:30:30.000000',
+    '2022-12-05 12:28:41.299761',
+    '2022-12-05 12:28:41.000000',
     '2.0',
     '150',
     'Corellian Engineering Corporation',
@@ -7575,46 +7639,6 @@ VALUES
     'CR90 corvette',
     '600',
     'corvette',
-    'http://localhost:3000/api/starships/1'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    2,
-    '60',
-    '36000000',
-    '2 years',
-    '150000000',
-    '47,060',
-    '2022-11-19 19:30:30.531737',
-    '2022-11-19 19:30:30.000000',
-    '2.0',
-    '1,600',
-    'Kuat Drive Yards',
-    '975',
-    'Imperial I-class Star Destroyer',
-    'Star Destroyer',
-    'n/a',
-    'Star Destroyer',
     'http://localhost:3000/api/starships/2'
   );
 INSERT INTO
@@ -7640,21 +7664,21 @@ INSERT INTO
 VALUES
   (
     3,
-    '70',
-    '180000',
-    '1 month',
-    '240000',
-    '5',
-    '2022-11-19 19:30:30.533566',
-    '2022-11-19 19:30:30.000000',
-    '1.0',
-    '38',
-    'Sienar Fleet Systems, Cyngus Spaceworks',
-    '1000',
-    'Sentinel-class landing craft',
-    'Sentinel-class landing craft',
-    '75',
-    'landing craft',
+    '60',
+    '36000000',
+    '2 years',
+    '150000000',
+    '47,060',
+    '2022-12-05 12:28:41.301468',
+    '2022-12-05 12:28:41.000000',
+    '2.0',
+    '1,600',
+    'Kuat Drive Yards',
+    '975',
+    'Imperial I-class Star Destroyer',
+    'Star Destroyer',
+    'n/a',
+    'Star Destroyer',
     'http://localhost:3000/api/starships/3'
   );
 INSERT INTO
@@ -7679,62 +7703,22 @@ INSERT INTO
   )
 VALUES
   (
-    4,
-    '10',
-    '1000000000000',
-    '3 years',
-    '1000000000000',
-    '342,953',
-    '2022-11-19 19:30:30.535068',
-    '2022-11-19 19:30:30.000000',
-    '4.0',
-    '120000',
-    'Imperial Department of Military Research, Sienar Fleet Systems',
-    'n/a',
-    'DS-1 Orbital Battle Station',
-    'Death Star',
-    '843,342',
-    'Deep Space Mobile Battlestation',
-    'http://localhost:3000/api/starships/4'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     5,
-    '80',
-    '110',
-    '1 week',
-    '134999',
-    '2',
-    '2022-11-19 19:30:30.540285',
-    '2022-11-19 19:30:30.000000',
+    '70',
+    '180000',
+    '1 month',
+    '240000',
+    '5',
+    '2022-12-05 12:28:41.302755',
+    '2022-12-05 12:28:41.000000',
     '1.0',
-    '14',
-    'Koensayr Manufacturing',
-    '1000km',
-    'BTL Y-wing',
-    'Y-wing',
-    '0',
-    'assault starfighter',
+    '38',
+    'Sienar Fleet Systems, Cyngus Spaceworks',
+    '1000',
+    'Sentinel-class landing craft',
+    'Sentinel-class landing craft',
+    '75',
+    'landing craft',
     'http://localhost:3000/api/starships/5'
   );
 INSERT INTO
@@ -7759,142 +7743,22 @@ INSERT INTO
   )
 VALUES
   (
-    6,
-    '40',
-    '250000000',
-    '6 years',
-    '1143350000',
-    '279,144',
-    '2022-11-19 19:30:30.548899',
-    '2022-11-19 19:30:30.000000',
-    '2.0',
-    '19000',
-    'Kuat Drive Yards, Fondor Shipyards',
-    'n/a',
-    'Executor-class star dreadnought',
-    'Executor',
-    '38000',
-    'Star dreadnought',
-    'http://localhost:3000/api/starships/6'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    7,
-    '20',
-    '19000000',
-    '6 months',
-    'unknown',
-    '6',
-    '2022-11-19 19:30:30.551334',
-    '2022-11-19 19:30:30.000000',
-    '4.0',
-    '90',
-    'Gallofree Yards, Inc.',
-    '650',
-    'GR-75 medium transport',
-    'Rebel transport',
-    '90',
-    'Medium transport',
-    'http://localhost:3000/api/starships/7'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    8,
-    '75',
-    '100000',
-    '2 months',
-    '100000',
-    '4',
-    '2022-11-19 19:30:30.559596',
-    '2022-11-19 19:30:30.000000',
-    '0.5',
-    '34.37',
-    'Corellian Engineering Corporation',
-    '1050',
-    'YT-1300 light freighter',
-    'Millennium Falcon',
-    '6',
-    'Light freighter',
-    'http://localhost:3000/api/starships/8'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     9,
-    '100',
-    '110',
-    '1 week',
-    '149999',
-    '1',
-    '2022-11-19 19:30:30.562844',
-    '2022-11-19 19:30:30.000000',
-    '1.0',
-    '12.5',
-    'Incom Corporation',
-    '1050',
-    'T-65 X-wing',
-    'X-wing',
-    '0',
-    'Starfighter',
+    '10',
+    '1000000000000',
+    '3 years',
+    '1000000000000',
+    '342,953',
+    '2022-12-05 12:28:41.304813',
+    '2022-12-05 12:28:41.000000',
+    '4.0',
+    '120000',
+    'Imperial Department of Military Research, Sienar Fleet Systems',
+    'n/a',
+    'DS-1 Orbital Battle Station',
+    'Death Star',
+    '843,342',
+    'Deep Space Mobile Battlestation',
     'http://localhost:3000/api/starships/9'
   );
 INSERT INTO
@@ -7920,21 +7784,21 @@ INSERT INTO
 VALUES
   (
     10,
-    '105',
-    '150',
-    '5 days',
-    'unknown',
-    '1',
-    '2022-11-19 19:30:30.564318',
-    '2022-11-19 19:30:30.000000',
-    '1.0',
-    '9.2',
-    'Sienar Fleet Systems',
-    '1200',
-    'Twin Ion Engine Advanced x1',
-    'TIE Advanced x1',
-    '0',
-    'Starfighter',
+    '75',
+    '100000',
+    '2 months',
+    '100000',
+    '4',
+    '2022-12-05 12:28:41.324066',
+    '2022-12-05 12:28:41.000000',
+    '0.5',
+    '34.37',
+    'Corellian Engineering Corporation',
+    '1050',
+    'YT-1300 light freighter',
+    'Millennium Falcon',
+    '6',
+    'Light freighter',
     'http://localhost:3000/api/starships/10'
   );
 INSERT INTO
@@ -7960,21 +7824,21 @@ INSERT INTO
 VALUES
   (
     11,
-    '40',
-    '6000000',
-    '2 years',
-    '8500000',
-    '854',
-    '2022-11-19 19:30:31.312019',
-    '2022-11-19 19:30:31.000000',
-    '2.0',
-    '300',
-    'Kuat Drive Yards',
-    '800',
-    'EF76 Nebulon-B escort frigate',
-    'EF76 Nebulon-B escort frigate',
-    '75',
-    'Escort ship',
+    '80',
+    '110',
+    '1 week',
+    '134999',
+    '2',
+    '2022-12-05 12:28:41.308900',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '14',
+    'Koensayr Manufacturing',
+    '1000km',
+    'BTL Y-wing',
+    'Y-wing',
+    '0',
+    'assault starfighter',
     'http://localhost:3000/api/starships/11'
   );
 INSERT INTO
@@ -8000,21 +7864,21 @@ INSERT INTO
 VALUES
   (
     12,
-    '60',
-    'unknown',
-    '2 years',
-    '104000000',
-    '5400',
-    '2022-11-19 19:30:31.314174',
-    '2022-11-19 19:30:31.000000',
+    '100',
+    '110',
+    '1 week',
+    '149999',
+    '1',
+    '2022-12-05 12:28:41.326998',
+    '2022-12-05 12:28:41.000000',
     '1.0',
-    '1200',
-    'Mon Calamari shipyards',
-    'n/a',
-    'MC80 Liberty type Star Cruiser',
-    'Calamari Cruiser',
-    '1200',
-    'Star Cruiser',
+    '12.5',
+    'Incom Corporation',
+    '1050',
+    'T-65 X-wing',
+    'X-wing',
+    '0',
+    'Starfighter',
     'http://localhost:3000/api/starships/12'
   );
 INSERT INTO
@@ -8040,21 +7904,21 @@ INSERT INTO
 VALUES
   (
     13,
-    '91',
-    '45',
-    '1 week',
-    '220000',
+    '105',
+    '150',
+    '5 days',
+    'unknown',
     '1',
-    '2022-11-19 19:30:31.316838',
-    '2022-11-19 19:30:31.000000',
-    '2.0',
-    '16.9',
-    'Slayn & Korpil',
-    '950',
-    'A/SF-01 B-wing starfighter',
-    'B-wing',
+    '2022-12-05 12:28:41.328189',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '9.2',
+    'Sienar Fleet Systems',
+    '1200',
+    'Twin Ion Engine Advanced x1',
+    'TIE Advanced x1',
     '0',
-    'Assault Starfighter',
+    'Starfighter',
     'http://localhost:3000/api/starships/13'
   );
 INSERT INTO
@@ -8079,62 +7943,22 @@ INSERT INTO
   )
 VALUES
   (
-    14,
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    '9',
-    '2022-11-19 19:30:31.318637',
-    '2022-11-19 19:30:31.000000',
-    '2.0',
-    '115',
-    'Corellian Engineering Corporation',
-    '900',
-    'Consular-class cruiser',
-    'Republic Cruiser',
-    '16',
-    'Space cruiser',
-    'http://localhost:3000/api/starships/14'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     15,
-    'unknown',
-    '4000000000',
-    '500 days',
-    'unknown',
-    '175',
-    '2022-11-19 19:30:31.320019',
-    '2022-11-19 19:30:31.000000',
+    '40',
+    '250000000',
+    '6 years',
+    '1143350000',
+    '279,144',
+    '2022-12-05 12:28:41.313961',
+    '2022-12-05 12:28:41.000000',
     '2.0',
-    '3170',
-    'Hoersch-Kessel Drive, Inc.',
+    '19000',
+    'Kuat Drive Yards, Fondor Shipyards',
     'n/a',
-    'Lucrehulk-class Droid Control Ship',
-    'Droid control ship',
-    '139000',
-    'Droid control ship',
+    'Executor-class star dreadnought',
+    'Executor',
+    '38000',
+    'Star dreadnought',
     'http://localhost:3000/api/starships/15'
   );
 INSERT INTO
@@ -8159,62 +7983,22 @@ INSERT INTO
   )
 VALUES
   (
-    16,
-    '70',
-    '70000',
-    '1 month',
-    'unknown',
-    '1',
-    '2022-11-19 19:30:31.329148',
-    '2022-11-19 19:30:31.000000',
-    '3.0',
-    '21.5',
-    'Kuat Systems Engineering',
-    '1000',
-    'Firespray-31-class patrol and attack',
-    'Slave 1',
-    '6',
-    'Patrol craft',
-    'http://localhost:3000/api/starships/16'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     17,
-    '50',
-    '80000',
-    '2 months',
-    '240000',
+    '20',
+    '19000000',
+    '6 months',
+    'unknown',
     '6',
-    '2022-11-19 19:30:31.331478',
-    '2022-11-19 19:30:31.000000',
-    '1.0',
-    '20',
-    'Sienar Fleet Systems',
-    '850',
-    'Lambda-class T-4a shuttle',
-    'Imperial shuttle',
-    '20',
-    'Armed government transport',
+    '2022-12-05 12:28:41.316708',
+    '2022-12-05 12:28:41.000000',
+    '4.0',
+    '90',
+    'Gallofree Yards, Inc.',
+    '650',
+    'GR-75 medium transport',
+    'Rebel transport',
+    '90',
+    'Medium transport',
     'http://localhost:3000/api/starships/17'
   );
 INSERT INTO
@@ -8239,142 +8023,22 @@ INSERT INTO
   )
 VALUES
   (
-    18,
-    '120',
-    '40',
-    '1 week',
-    '175000',
-    '1',
-    '2022-11-19 19:30:31.335012',
-    '2022-11-19 19:30:31.000000',
-    '1.0',
-    '9.6',
-    'Alliance Underground Engineering, Incom Corporation',
-    '1300',
-    'RZ-1 A-wing Interceptor',
-    'A-wing',
-    '0',
-    'Starfighter',
-    'http://localhost:3000/api/starships/18'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    19,
-    'unknown',
-    '65',
-    '7 days',
-    '200000',
-    '1',
-    '2022-11-19 19:30:31.339745',
-    '2022-11-19 19:30:31.000000',
-    '1.0',
-    '11',
-    'Theed Palace Space Vessel Engineering Corps',
-    '1100',
-    'N-1 starfighter',
-    'Naboo fighter',
-    '0',
-    'Starfighter',
-    'http://localhost:3000/api/starships/19'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    20,
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    '8',
-    '2022-11-19 19:30:31.341310',
-    '2022-11-19 19:30:31.000000',
-    '1.8',
-    '76',
-    'Theed Palace Space Vessel Engineering Corps, Nubia Star Drives',
-    '920',
-    'J-type 327 Nubian royal starship',
-    'Naboo Royal Starship',
-    'unknown',
-    'yacht',
-    'http://localhost:3000/api/starships/20'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     21,
+    '70',
+    '70000',
+    '1 month',
     'unknown',
-    'unknown',
-    '1 year',
-    '2000000',
-    '5',
-    '2022-11-19 19:30:31.833680',
-    '2022-11-19 19:30:31.000000',
-    '0.7',
-    '39',
-    'Theed Palace Space Vessel Engineering Corps, Nubia Star Drives',
-    '2000',
-    'J-type diplomatic barge',
-    'J-type diplomatic barge',
-    '10',
-    'Diplomatic barge',
+    '1',
+    '2022-12-05 12:28:41.597301',
+    '2022-12-05 12:28:41.000000',
+    '3.0',
+    '21.5',
+    'Kuat Systems Engineering',
+    '1000',
+    'Firespray-31-class patrol and attack',
+    'Slave 1',
+    '6',
+    'Patrol craft',
     'http://localhost:3000/api/starships/21'
   );
 INSERT INTO
@@ -8400,21 +8064,21 @@ INSERT INTO
 VALUES
   (
     22,
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    '2022-11-19 19:30:31.835886',
-    '2022-11-19 19:30:31.000000',
-    'unknown',
-    '390',
-    'Botajef Shipyards',
-    'unknown',
-    'Botajef AA-9 Freighter-Liner',
-    'AA-9 Coruscant freighter',
-    '30000',
-    'freighter',
+    '50',
+    '80000',
+    '2 months',
+    '240000',
+    '6',
+    '2022-12-05 12:28:41.602451',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '20',
+    'Sienar Fleet Systems',
+    '850',
+    'Lambda-class T-4a shuttle',
+    'Imperial shuttle',
+    '20',
+    'Armed government transport',
     'http://localhost:3000/api/starships/22'
   );
 INSERT INTO
@@ -8440,21 +8104,21 @@ INSERT INTO
 VALUES
   (
     23,
-    'unknown',
-    '11250000',
+    '40',
+    '6000000',
     '2 years',
-    'unknown',
-    '700',
-    '2022-11-19 19:30:31.843370',
-    '2022-11-19 19:30:31.000000',
-    '0.6',
-    '752',
-    'Rothana Heavy Engineering',
-    'unknown',
-    'Acclamator I-class assault ship',
-    'Republic Assault ship',
-    '16000',
-    'assault ship',
+    '8500000',
+    '854',
+    '2022-12-05 12:28:41.585433',
+    '2022-12-05 12:28:41.000000',
+    '2.0',
+    '300',
+    'Kuat Drive Yards',
+    '800',
+    'EF76 Nebulon-B escort frigate',
+    'EF76 Nebulon-B escort frigate',
+    '75',
+    'Escort ship',
     'http://localhost:3000/api/starships/23'
   );
 INSERT INTO
@@ -8479,142 +8143,22 @@ INSERT INTO
   )
 VALUES
   (
-    24,
-    'unknown',
-    '240',
-    '7 days',
-    '35700',
-    '3',
-    '2022-11-19 19:30:31.845188',
-    '2022-11-19 19:30:31.000000',
-    '1.5',
-    '15.2',
-    'Huppla Pasa Tisc Shipwrights Collective',
-    '1600',
-    'Punworcca 116-class interstellar sloop',
-    'Solar Sailer',
-    '11',
-    'yacht',
-    'http://localhost:3000/api/starships/24'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    25,
-    'unknown',
-    '50000',
-    '56 days',
-    '1000000',
-    '5',
-    '2022-11-19 19:30:31.847981',
-    '2022-11-19 19:30:31.000000',
-    '1.0',
-    '18.5',
-    'Cygnus Spaceworks',
-    '2000',
-    'Theta-class T-2c shuttle',
-    'Theta-class T-2c shuttle',
-    '16',
-    'transport',
-    'http://localhost:3000/api/starships/25'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
-    26,
-    'unknown',
-    '20000000',
-    '2 years',
-    '59000000',
-    '7400',
-    '2022-11-19 19:30:31.849980',
-    '2022-11-19 19:30:31.000000',
-    '1.0',
-    '1137',
-    'Kuat Drive Yards, Allanteen Six shipyards',
-    '975',
-    'Senator-class Star Destroyer',
-    'Republic attack cruiser',
-    '2000',
-    'star destroyer',
-    'http://localhost:3000/api/starships/26'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     27,
+    '60',
     'unknown',
-    '2500000',
-    '30 days',
-    '55000000',
-    '1',
-    '2022-11-19 19:30:31.851253',
-    '2022-11-19 19:30:31.000000',
-    '1.5',
-    '26.5',
-    'Republic Sienar Systems',
-    '1180',
-    'Star Courier',
-    'Scimitar',
-    '6',
-    'Space Transport',
+    '2 years',
+    '104000000',
+    '5400',
+    '2022-12-05 12:28:41.586930',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '1200',
+    'Mon Calamari shipyards',
+    'n/a',
+    'MC80 Liberty type Star Cruiser',
+    'Calamari Cruiser',
+    '1200',
+    'Star Cruiser',
     'http://localhost:3000/api/starships/27'
   );
 INSERT INTO
@@ -8640,19 +8184,19 @@ INSERT INTO
 VALUES
   (
     28,
-    'unknown',
-    '60',
-    '7 days',
-    '180000',
+    '120',
+    '40',
+    '1 week',
+    '175000',
     '1',
-    '2022-11-19 19:30:31.854935',
-    '2022-11-19 19:30:31.000000',
+    '2022-12-05 12:28:41.607785',
+    '2022-12-05 12:28:41.000000',
     '1.0',
-    '8',
-    'Kuat Systems Engineering',
-    '1150',
-    'Delta-7 Aethersprite-class interceptor',
-    'Jedi starfighter',
+    '9.6',
+    'Alliance Underground Engineering, Incom Corporation',
+    '1300',
+    'RZ-1 A-wing Interceptor',
+    'A-wing',
     '0',
     'Starfighter',
     'http://localhost:3000/api/starships/28'
@@ -8680,21 +8224,21 @@ INSERT INTO
 VALUES
   (
     29,
-    'unknown',
-    'unknown',
-    'unknown',
-    'unknown',
-    '4',
-    '2022-11-19 19:30:31.856642',
-    '2022-11-19 19:30:31.000000',
-    '0.9',
-    '47.9',
-    'Theed Palace Space Vessel Engineering Corps',
-    '8000',
-    'H-type Nubian yacht',
-    'H-type Nubian yacht',
-    'unknown',
-    'yacht',
+    '91',
+    '45',
+    '1 week',
+    '220000',
+    '1',
+    '2022-12-05 12:28:41.589828',
+    '2022-12-05 12:28:41.000000',
+    '2.0',
+    '16.9',
+    'Slayn & Korpil',
+    '950',
+    'A/SF-01 B-wing starfighter',
+    'B-wing',
+    '0',
+    'Assault Starfighter',
     'http://localhost:3000/api/starships/29'
   );
 INSERT INTO
@@ -8719,62 +8263,22 @@ INSERT INTO
   )
 VALUES
   (
-    30,
-    'unknown',
-    '50000000',
-    '4 years',
-    '125000000',
-    '600',
-    '2022-11-19 19:30:31.863026',
-    '2022-11-19 19:30:31.000000',
-    '1.5',
-    '1088',
-    'Rendili StarDrive, Free Dac Volunteers Engineering corps.',
-    '1050',
-    'Providence-class carrier/destroyer',
-    'Trade Federation cruiser',
-    '48247',
-    'capital ship',
-    'http://localhost:3000/api/starships/30'
-  );
-INSERT INTO
-  `starship` (
-    `id`,
-    `MGLT`,
-    `cargo_capacity`,
-    `consumables`,
-    `cost_in_credits`,
-    `crew`,
-    `created`,
-    `edited`,
-    `hyperdrive_rating`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `starship_class`,
-    `url`
-  )
-VALUES
-  (
     31,
-    '100',
-    '110',
-    '5 days',
-    '155000',
-    '3',
-    '2022-11-19 19:30:32.427862',
-    '2022-11-19 19:30:32.000000',
-    '1.0',
-    '14.5',
-    'Incom Corporation, Subpro Corporation',
-    '1000',
-    'Aggressive Reconnaissance-170 starfighte',
-    'arc-170',
-    '0',
-    'starfighter',
+    'unknown',
+    'unknown',
+    'unknown',
+    'unknown',
+    '9',
+    '2022-12-05 12:28:41.591157',
+    '2022-12-05 12:28:41.000000',
+    '2.0',
+    '115',
+    'Corellian Engineering Corporation',
+    '900',
+    'Consular-class cruiser',
+    'Republic Cruiser',
+    '16',
+    'Space cruiser',
     'http://localhost:3000/api/starships/31'
   );
 INSERT INTO
@@ -8801,20 +8305,20 @@ VALUES
   (
     32,
     'unknown',
-    '40000000',
-    '2 years',
-    '57000000',
-    '200',
-    '2022-11-19 19:30:32.430175',
-    '2022-11-19 19:30:32.000000',
-    '1.0',
-    '825',
-    'Hoersch-Kessel Drive, Inc, Gwori Revolutionary Industries',
+    '4000000000',
+    '500 days',
     'unknown',
-    'Munificent-class star frigate',
-    'Banking clan frigte',
-    'unknown',
-    'cruiser',
+    '175',
+    '2022-12-05 12:28:41.592542',
+    '2022-12-05 12:28:41.000000',
+    '2.0',
+    '3170',
+    'Hoersch-Kessel Drive, Inc.',
+    'n/a',
+    'Lucrehulk-class Droid Control Ship',
+    'Droid control ship',
+    '139000',
+    'Droid control ship',
     'http://localhost:3000/api/starships/32'
   );
 INSERT INTO
@@ -8839,23 +8343,23 @@ INSERT INTO
   )
 VALUES
   (
-    33,
+    39,
     'unknown',
-    '60',
-    '15 hours',
-    '102500',
+    '65',
+    '7 days',
+    '200000',
     '1',
-    '2022-11-19 19:30:32.433815',
-    '2022-11-19 19:30:32.000000',
+    '2022-12-05 12:28:41.611473',
+    '2022-12-05 12:28:41.000000',
     '1.0',
-    '7.9',
-    'Kuat Systems Engineering',
-    '1050',
-    'Alpha-3 Nimbus-class V-wing starfighter',
-    'V-wing',
+    '11',
+    'Theed Palace Space Vessel Engineering Corps',
+    '1100',
+    'N-1 starfighter',
+    'Naboo fighter',
     '0',
-    'starfighter',
-    'http://localhost:3000/api/starships/33'
+    'Starfighter',
+    'http://localhost:3000/api/starships/39'
   );
 INSERT INTO
   `starship` (
@@ -8879,14 +8383,454 @@ INSERT INTO
   )
 VALUES
   (
-    34,
+    40,
+    'unknown',
+    'unknown',
+    'unknown',
+    'unknown',
+    '8',
+    '2022-12-05 12:28:41.612297',
+    '2022-12-05 12:28:41.000000',
+    '1.8',
+    '76',
+    'Theed Palace Space Vessel Engineering Corps, Nubia Star Drives',
+    '920',
+    'J-type 327 Nubian royal starship',
+    'Naboo Royal Starship',
+    'unknown',
+    'yacht',
+    'http://localhost:3000/api/starships/40'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    41,
+    'unknown',
+    '2500000',
+    '30 days',
+    '55000000',
+    '1',
+    '2022-12-05 12:28:41.812051',
+    '2022-12-05 12:28:41.000000',
+    '1.5',
+    '26.5',
+    'Republic Sienar Systems',
+    '1180',
+    'Star Courier',
+    'Scimitar',
+    '6',
+    'Space Transport',
+    'http://localhost:3000/api/starships/41'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    43,
+    'unknown',
+    'unknown',
+    '1 year',
+    '2000000',
+    '5',
+    '2022-12-05 12:28:41.795573',
+    '2022-12-05 12:28:41.000000',
+    '0.7',
+    '39',
+    'Theed Palace Space Vessel Engineering Corps, Nubia Star Drives',
+    '2000',
+    'J-type diplomatic barge',
+    'J-type diplomatic barge',
+    '10',
+    'Diplomatic barge',
+    'http://localhost:3000/api/starships/43'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    47,
+    'unknown',
+    'unknown',
+    'unknown',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:41.796902',
+    '2022-12-05 12:28:41.000000',
+    'unknown',
+    '390',
+    'Botajef Shipyards',
+    'unknown',
+    'Botajef AA-9 Freighter-Liner',
+    'AA-9 Coruscant freighter',
+    '30000',
+    'freighter',
+    'http://localhost:3000/api/starships/47'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    48,
+    'unknown',
+    '60',
+    '7 days',
+    '180000',
+    '1',
+    '2022-12-05 12:28:41.817311',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '8',
+    'Kuat Systems Engineering',
+    '1150',
+    'Delta-7 Aethersprite-class interceptor',
+    'Jedi starfighter',
+    '0',
+    'Starfighter',
+    'http://localhost:3000/api/starships/48'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    49,
+    'unknown',
+    'unknown',
+    'unknown',
+    'unknown',
+    '4',
+    '2022-12-05 12:28:41.818431',
+    '2022-12-05 12:28:41.000000',
+    '0.9',
+    '47.9',
+    'Theed Palace Space Vessel Engineering Corps',
+    '8000',
+    'H-type Nubian yacht',
+    'H-type Nubian yacht',
+    'unknown',
+    'yacht',
+    'http://localhost:3000/api/starships/49'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    52,
+    'unknown',
+    '11250000',
+    '2 years',
+    'unknown',
+    '700',
+    '2022-12-05 12:28:41.803748',
+    '2022-12-05 12:28:41.000000',
+    '0.6',
+    '752',
+    'Rothana Heavy Engineering',
+    'unknown',
+    'Acclamator I-class assault ship',
+    'Republic Assault ship',
+    '16000',
+    'assault ship',
+    'http://localhost:3000/api/starships/52'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    58,
+    'unknown',
+    '240',
+    '7 days',
+    '35700',
+    '3',
+    '2022-12-05 12:28:41.806258',
+    '2022-12-05 12:28:41.000000',
+    '1.5',
+    '15.2',
+    'Huppla Pasa Tisc Shipwrights Collective',
+    '1600',
+    'Punworcca 116-class interstellar sloop',
+    'Solar Sailer',
+    '11',
+    'yacht',
+    'http://localhost:3000/api/starships/58'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    59,
+    'unknown',
+    '50000000',
+    '4 years',
+    '125000000',
+    '600',
+    '2022-12-05 12:28:41.822074',
+    '2022-12-05 12:28:41.000000',
+    '1.5',
+    '1088',
+    'Rendili StarDrive, Free Dac Volunteers Engineering corps.',
+    '1050',
+    'Providence-class carrier/destroyer',
+    'Trade Federation cruiser',
+    '48247',
+    'capital ship',
+    'http://localhost:3000/api/starships/59'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    61,
+    'unknown',
+    '50000',
+    '56 days',
+    '1000000',
+    '5',
+    '2022-12-05 12:28:41.809213',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '18.5',
+    'Cygnus Spaceworks',
+    '2000',
+    'Theta-class T-2c shuttle',
+    'Theta-class T-2c shuttle',
+    '16',
+    'transport',
+    'http://localhost:3000/api/starships/61'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    63,
+    'unknown',
+    '20000000',
+    '2 years',
+    '59000000',
+    '7400',
+    '2022-12-05 12:28:41.810976',
+    '2022-12-05 12:28:41.000000',
+    '1.0',
+    '1137',
+    'Kuat Drive Yards, Allanteen Six shipyards',
+    '975',
+    'Senator-class Star Destroyer',
+    'Republic attack cruiser',
+    '2000',
+    'star destroyer',
+    'http://localhost:3000/api/starships/63'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    64,
     'unknown',
     'unknown',
     'unknown',
     'unknown',
     '3',
-    '2022-11-19 19:30:32.436250',
-    '2022-11-19 19:30:32.000000',
+    '2022-12-05 12:28:42.069900',
+    '2022-12-05 12:28:42.000000',
     '0.5',
     '29.2',
     'Theed Palace Space Vessel Engineering Corps/Nubia Star Drives, Incorporated',
@@ -8895,7 +8839,7 @@ VALUES
     'Naboo star skiff',
     '3',
     'yacht',
-    'http://localhost:3000/api/starships/34'
+    'http://localhost:3000/api/starships/64'
   );
 INSERT INTO
   `starship` (
@@ -8919,14 +8863,14 @@ INSERT INTO
   )
 VALUES
   (
-    35,
+    65,
     'unknown',
     '60',
     '2 days',
     '320000',
     '1',
-    '2022-11-19 19:30:32.437831',
-    '2022-11-19 19:30:32.000000',
+    '2022-12-05 12:28:42.070917',
+    '2022-12-05 12:28:42.000000',
     '1.0',
     '5.47',
     'Kuat Systems Engineering',
@@ -8935,7 +8879,7 @@ VALUES
     'Jedi Interceptor',
     '0',
     'starfighter',
-    'http://localhost:3000/api/starships/35'
+    'http://localhost:3000/api/starships/65'
   );
 INSERT INTO
   `starship` (
@@ -8959,14 +8903,94 @@ INSERT INTO
   )
 VALUES
   (
-    36,
+    66,
+    '100',
+    '110',
+    '5 days',
+    '155000',
+    '3',
+    '2022-12-05 12:28:42.061566',
+    '2022-12-05 12:28:42.000000',
+    '1.0',
+    '14.5',
+    'Incom Corporation, Subpro Corporation',
+    '1000',
+    'Aggressive Reconnaissance-170 starfighte',
+    'arc-170',
+    '0',
+    'starfighter',
+    'http://localhost:3000/api/starships/66'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    68,
+    'unknown',
+    '40000000',
+    '2 years',
+    '57000000',
+    '200',
+    '2022-12-05 12:28:42.063306',
+    '2022-12-05 12:28:42.000000',
+    '1.0',
+    '825',
+    'Hoersch-Kessel Drive, Inc, Gwori Revolutionary Industries',
+    'unknown',
+    'Munificent-class star frigate',
+    'Banking clan frigte',
+    'unknown',
+    'cruiser',
+    'http://localhost:3000/api/starships/68'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    74,
     'unknown',
     '140',
     '7 days',
     '168000',
     '1',
-    '2022-11-19 19:30:32.443480',
-    '2022-11-19 19:30:32.000000',
+    '2022-12-05 12:28:42.076496',
+    '2022-12-05 12:28:42.000000',
     '6',
     '6.71',
     'Feethan Ottraw Scalable Assemblies',
@@ -8975,7 +8999,87 @@ VALUES
     'Belbullab-22 starfighter',
     '0',
     'starfighter',
-    'http://localhost:3000/api/starships/36'
+    'http://localhost:3000/api/starships/74'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    75,
+    'unknown',
+    '60',
+    '15 hours',
+    '102500',
+    '1',
+    '2022-12-05 12:28:42.067411',
+    '2022-12-05 12:28:42.000000',
+    '1.0',
+    '7.9',
+    'Kuat Systems Engineering',
+    '1050',
+    'Alpha-3 Nimbus-class V-wing starfighter',
+    'V-wing',
+    '0',
+    'starfighter',
+    'http://localhost:3000/api/starships/75'
+  );
+INSERT INTO
+  `starship` (
+    `id`,
+    `MGLT`,
+    `cargo_capacity`,
+    `consumables`,
+    `cost_in_credits`,
+    `crew`,
+    `created`,
+    `edited`,
+    `hyperdrive_rating`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `starship_class`,
+    `url`
+  )
+VALUES
+  (
+    78,
+    '60',
+    '3000000',
+    '1 year',
+    '3500000',
+    '30-165',
+    '2022-12-05 12:46:22.435716',
+    '2022-12-05 12:46:22.000000',
+    '2.0',
+    '150',
+    'Corellian Engineering Corporation',
+    '950',
+    'CR90 corvette',
+    'CR940 corvette',
+    '600',
+    'corvette',
+    'http://localhost:3000/api/starships/78'
   );
 
 # ------------------------------------------------------------
@@ -8990,23 +9094,7 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (1, 1);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (1, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (1, 6);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
   (2, 1);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (2, 2);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
@@ -9014,11 +9102,19 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
+  (2, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
   (3, 1);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (4, 1);
+  (3, 2);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (3, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
@@ -9026,55 +9122,23 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (5, 2);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (5, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (6, 2);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (6, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (7, 2);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (7, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (8, 1);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (8, 2);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (8, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
   (9, 1);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (9, 2);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (9, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
   (10, 1);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (10, 2);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (10, 3);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (11, 1);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
@@ -9086,35 +9150,27 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
+  (12, 1);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (12, 2);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
   (12, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (13, 3);
+  (13, 1);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (14, 4);
+  (15, 2);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (15, 4);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (15, 5);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (15, 6);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (16, 2);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (16, 5);
+  (15, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
@@ -9126,19 +9182,7 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (18, 3);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (19, 4);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (19, 5);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (20, 4);
+  (21, 2);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
@@ -9146,47 +9190,43 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (22, 5);
+  (22, 2);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (23, 5);
+  (22, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (24, 5);
+  (23, 2);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (25, 6);
+  (23, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (26, 6);
+  (27, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (27, 4);
+  (28, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (28, 5);
+  (29, 3);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (28, 6);
+  (31, 4);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (29, 5);
+  (32, 4);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (30, 6);
-INSERT INTO
-  `starships_films` (`starshipId`, `filmId`)
-VALUES
-  (31, 6);
+  (32, 5);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
@@ -9194,19 +9234,95 @@ VALUES
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (33, 6);
+  (39, 4);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (34, 6);
+  (39, 5);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (35, 6);
+  (40, 4);
 INSERT INTO
   `starships_films` (`starshipId`, `filmId`)
 VALUES
-  (36, 6);
+  (41, 4);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (43, 5);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (47, 5);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (48, 5);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (48, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (49, 5);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (52, 5);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (58, 5);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (59, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (61, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (63, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (64, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (65, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (66, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (68, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (74, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (75, 6);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (78, 1);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (78, 2);
+INSERT INTO
+  `starships_films` (`starshipId`, `filmId`)
+VALUES
+  (78, 3);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: starships_people
@@ -9215,123 +9331,123 @@ VALUES
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (8, 13);
+  (10, 13);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (8, 14);
+  (10, 14);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (8, 25);
+  (10, 25);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (8, 31);
+  (10, 31);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (9, 1);
+  (12, 9);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (9, 9);
+  (12, 18);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (9, 18);
+  (12, 19);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (9, 19);
+  (13, 4);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (10, 4);
+  (21, 22);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (16, 22);
+  (22, 13);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (17, 1);
+  (22, 14);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (17, 13);
+  (28, 29);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (17, 14);
+  (39, 11);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (18, 29);
+  (39, 35);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (19, 11);
+  (39, 60);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (19, 35);
+  (40, 39);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (19, 60);
+  (41, 44);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (20, 39);
+  (48, 10);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (27, 44);
+  (48, 58);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (28, 10);
+  (49, 35);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (28, 58);
+  (59, 10);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (29, 35);
+  (59, 11);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (30, 10);
+  (64, 10);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (30, 11);
+  (64, 35);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (34, 10);
+  (65, 10);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (34, 35);
+  (65, 11);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (35, 10);
+  (74, 10);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (35, 11);
+  (74, 79);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (36, 10);
+  (78, 2);
 INSERT INTO
   `starships_people` (`starshipId`, `peopleId`)
 VALUES
-  (36, 79);
+  (78, 3);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: typeorm_migrations
@@ -9437,7 +9553,7 @@ VALUES
   (
     1,
     'admin',
-    '$2b$10$ADT8dDhJw/V5P.qR0AeiUO9Bde7Fzm8Da0SbJcuoko8aHNeF8TAZO'
+    '$2b$10$kG/jUjw4FJPcg5Td/GcZQuOqzai4CPVNI/wM4iloUxJLM9xdZghBC'
   );
 
 # ------------------------------------------------------------
@@ -9473,12 +9589,12 @@ INSERT INTO
   )
 VALUES
   (
-    1,
+    4,
     '2 months',
     '50000',
     '150000',
-    '2022-11-19 19:30:32.911021',
-    '2022-11-19 19:30:33.000000',
+    '2022-12-05 12:28:42.461921',
+    '2022-12-05 12:28:42.000000',
     '46',
     '36.8 ',
     'Corellia Mining Corporation',
@@ -9486,7 +9602,7 @@ VALUES
     'Digger Crawler',
     'Sand Crawler',
     '30',
-    'http://localhost:3000/api/vehicles/1',
+    'http://localhost:3000/api/vehicles/4',
     'wheeled'
   );
 INSERT INTO
@@ -9509,12 +9625,12 @@ INSERT INTO
   )
 VALUES
   (
-    2,
+    6,
     '0',
     '50',
     '14500',
-    '2022-11-19 19:30:32.912825',
-    '2022-11-19 19:30:33.000000',
+    '2022-12-05 12:28:42.463828',
+    '2022-12-05 12:28:42.000000',
     '1',
     '10.4 ',
     'Incom Corporation',
@@ -9522,152 +9638,8 @@ VALUES
     'T-16 skyhopper',
     'T-16 skyhopper',
     '1',
-    'http://localhost:3000/api/vehicles/2',
-    'repulsorcraft'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    3,
-    'unknown',
-    '5',
-    '10550',
-    '2022-11-19 19:30:32.914164',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '3.4 ',
-    'SoroSuub Corporation',
-    '250',
-    'X-34 landspeeder',
-    'X-34 landspeeder',
-    '1',
-    'http://localhost:3000/api/vehicles/3',
-    'repulsorcraft'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    4,
-    '2 days',
-    '65',
-    'unknown',
-    '2022-11-19 19:30:32.915238',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '6.4',
-    'Sienar Fleet Systems',
-    '1200',
-    'Twin Ion Engine/Ln Starfighter',
-    'TIE/LN starfighter',
-    '0',
-    'http://localhost:3000/api/vehicles/4',
-    'starfighter'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    5,
-    '2 days',
-    'none',
-    'unknown',
-    '2022-11-19 19:30:32.918260',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '7.8',
-    'Sienar Fleet Systems',
-    '850',
-    'TIE/sa bomber',
-    'TIE bomber',
-    '0',
-    'http://localhost:3000/api/vehicles/5',
-    'space/planetary bomber'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    6,
-    'unknown',
-    '1000',
-    'unknown',
-    '2022-11-19 19:30:32.920081',
-    '2022-11-19 19:30:33.000000',
-    '5',
-    '20',
-    'Kuat Drive Yards, Imperial Department of Military Research',
-    '60',
-    'All Terrain Armored Transport',
-    'AT-AT',
-    '40',
     'http://localhost:3000/api/vehicles/6',
-    'assault walker'
+    'repulsorcraft'
   );
 INSERT INTO
   `vehicle` (
@@ -9690,18 +9662,18 @@ INSERT INTO
 VALUES
   (
     7,
-    '1 day',
-    '10',
-    '75000',
-    '2022-11-19 19:30:32.923513',
-    '2022-11-19 19:30:33.000000',
-    '2',
-    '7',
-    'Bespin Motors',
-    '1500',
-    'Storm IV Twin-Pod',
-    'Storm IV Twin-Pod cloud car',
-    '0',
+    'unknown',
+    '5',
+    '10550',
+    '2022-12-05 12:28:42.465758',
+    '2022-12-05 12:28:42.000000',
+    '1',
+    '3.4 ',
+    'SoroSuub Corporation',
+    '250',
+    'X-34 landspeeder',
+    'X-34 landspeeder',
+    '1',
     'http://localhost:3000/api/vehicles/7',
     'repulsorcraft'
   );
@@ -9726,199 +9698,19 @@ INSERT INTO
 VALUES
   (
     8,
-    'Live food tanks',
-    '2000000',
-    '285000',
-    '2022-11-19 19:30:32.927021',
-    '2022-11-19 19:30:33.000000',
-    '26',
-    '30',
-    'Ubrikkian Industries Custom Vehicle Division',
-    '100',
-    'Modified Luxury Sail Barge',
-    'Sail barge',
-    '500',
-    'http://localhost:3000/api/vehicles/8',
-    'sail barge'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    9,
-    'none',
-    '10',
-    'unknown',
-    '2022-11-19 19:30:32.933352',
-    '2022-11-19 19:30:33.000000',
-    '2',
-    '4.5',
-    'Incom corporation',
-    '650',
-    't-47 airspeeder',
-    'Snowspeeder',
-    '0',
-    'http://localhost:3000/api/vehicles/9',
-    'airspeeder'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    10,
-    'none',
-    '200',
-    'unknown',
-    '2022-11-19 19:30:32.936281',
-    '2022-11-19 19:30:33.000000',
-    '2',
-    '2',
-    'Kuat Drive Yards, Imperial Department of Military Research',
-    '90',
-    'All Terrain Scout Transport',
-    'AT-ST',
-    '0',
-    'http://localhost:3000/api/vehicles/10',
-    'walker'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    11,
-    '1 day',
-    '135000',
-    '8000',
-    '2022-11-19 19:30:33.302717',
-    '2022-11-19 19:30:33.000000',
-    '5',
-    '9.5',
-    'Ubrikkian Industries',
-    '250',
-    'Bantha-II',
-    'Bantha-II cargo skiff',
-    '16',
-    'http://localhost:3000/api/vehicles/11',
-    'repulsorcraft cargo skiff'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    12,
     '2 days',
-    '75',
+    '65',
     'unknown',
-    '2022-11-19 19:30:33.305787',
-    '2022-11-19 19:30:33.000000',
+    '2022-12-05 12:28:42.467366',
+    '2022-12-05 12:28:42.000000',
     '1',
-    '9.6',
+    '6.4',
     'Sienar Fleet Systems',
-    '1250',
-    'Twin Ion Engine Interceptor',
-    'TIE/IN interceptor',
-    '0',
-    'http://localhost:3000/api/vehicles/12',
-    'starfighter'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    13,
-    'none',
-    '0',
-    'unknown',
-    '2022-11-19 19:30:33.311044',
-    '2022-11-19 19:30:33.000000',
-    '0',
-    '3.5',
-    'Haor Chall Engineering, Baktoid Armor Workshop',
     '1200',
-    'Vulture-class droid starfighter',
-    'Vulture Droid',
+    'Twin Ion Engine/Ln Starfighter',
+    'TIE/LN starfighter',
     '0',
-    'http://localhost:3000/api/vehicles/13',
+    'http://localhost:3000/api/vehicles/8',
     'starfighter'
   );
 INSERT INTO
@@ -9942,56 +9734,20 @@ INSERT INTO
 VALUES
   (
     14,
+    'none',
+    '10',
     'unknown',
-    '12000',
-    '138000',
-    '2022-11-19 19:30:33.313219',
-    '2022-11-19 19:30:33.000000',
-    '4',
-    '31',
-    'Baktoid Armor Workshop',
-    '35',
-    'Multi-Troop Transport',
-    'Multi-Troop Transport',
-    '112',
+    '2022-12-05 12:28:42.485394',
+    '2022-12-05 12:28:42.000000',
+    '2',
+    '4.5',
+    'Incom corporation',
+    '650',
+    't-47 airspeeder',
+    'Snowspeeder',
+    '0',
     'http://localhost:3000/api/vehicles/14',
-    'repulsorcraft'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    15,
-    'unknown',
-    'unknown',
-    'unknown',
-    '2022-11-19 19:30:33.314400',
-    '2022-11-19 19:30:33.000000',
-    '4',
-    '9.75',
-    'Baktoid Armor Workshop',
-    '55',
-    'Armoured Assault Tank',
-    'Armored Assault Tank',
-    '6',
-    'http://localhost:3000/api/vehicles/15',
-    'repulsorcraft'
+    'airspeeder'
   );
 INSERT INTO
   `vehicle` (
@@ -10014,56 +9770,20 @@ INSERT INTO
 VALUES
   (
     16,
+    '2 days',
     'none',
-    'none',
-    '2500',
-    '2022-11-19 19:30:33.315919',
-    '2022-11-19 19:30:33.000000',
+    'unknown',
+    '2022-12-05 12:28:42.470108',
+    '2022-12-05 12:28:42.000000',
     '1',
-    '2',
-    'Baktoid Armor Workshop',
-    '400',
-    'Single Trooper Aerial Platform',
-    'Single Trooper Aerial Platform',
+    '7.8',
+    'Sienar Fleet Systems',
+    '850',
+    'TIE/sa bomber',
+    'TIE bomber',
     '0',
     'http://localhost:3000/api/vehicles/16',
-    'repulsorcraft'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    17,
-    '1 day',
-    '1800000',
-    '200000',
-    '2022-11-19 19:30:33.317720',
-    '2022-11-19 19:30:33.000000',
-    '140',
-    '210',
-    'Haor Chall Engineering',
-    '587',
-    'C-9979 landing craft',
-    'C-9979 landing craft',
-    '284',
-    'http://localhost:3000/api/vehicles/17',
-    'landing craft'
+    'space/planetary bomber'
   );
 INSERT INTO
   `vehicle` (
@@ -10086,20 +9806,20 @@ INSERT INTO
 VALUES
   (
     18,
-    '1 day',
-    '4',
-    '8000',
-    '2022-11-19 19:30:33.329659',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '3',
-    'Aratech Repulsor Company',
-    '360',
-    '74-Z speeder bike',
-    'Imperial Speeder Bike',
-    '1',
+    'unknown',
+    '1000',
+    'unknown',
+    '2022-12-05 12:28:42.472728',
+    '2022-12-05 12:28:42.000000',
+    '5',
+    '20',
+    'Kuat Drive Yards, Imperial Department of Military Research',
+    '60',
+    'All Terrain Armored Transport',
+    'AT-AT',
+    '40',
     'http://localhost:3000/api/vehicles/18',
-    'speeder'
+    'assault walker'
   );
 INSERT INTO
   `vehicle` (
@@ -10122,20 +9842,20 @@ INSERT INTO
 VALUES
   (
     19,
+    'none',
+    '200',
     'unknown',
-    '1600',
-    'unknown',
-    '2022-11-19 19:30:33.337441',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '15',
-    'Otoh Gunga Bongameken Cooperative',
-    '85',
-    'Tribubble bongo',
-    'Tribubble bongo',
+    '2022-12-05 12:28:42.489628',
+    '2022-12-05 12:28:42.000000',
     '2',
+    '2',
+    'Kuat Drive Yards, Imperial Department of Military Research',
+    '90',
+    'All Terrain Scout Transport',
+    'AT-ST',
+    '0',
     'http://localhost:3000/api/vehicles/19',
-    'submarine'
+    'walker'
   );
 INSERT INTO
   `vehicle` (
@@ -10158,128 +9878,20 @@ INSERT INTO
 VALUES
   (
     20,
-    'unknown',
+    '1 day',
+    '10',
+    '75000',
+    '2022-12-05 12:28:42.476472',
+    '2022-12-05 12:28:42.000000',
     '2',
-    '4000',
-    '2022-11-19 19:30:33.339458',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '1.5',
-    'Razalon',
-    '180',
-    'FC-20 speeder bike',
-    'Sith speeder',
+    '7',
+    'Bespin Motors',
+    '1500',
+    'Storm IV Twin-Pod',
+    'Storm IV Twin-Pod cloud car',
     '0',
     'http://localhost:3000/api/vehicles/20',
-    'speeder'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    21,
-    'unknown',
-    '170',
-    'unknown',
-    '2022-11-19 19:30:33.703413',
-    '2022-11-19 19:30:33.000000',
-    '6',
-    '17.4',
-    'Rothana Heavy Engineering',
-    '620',
-    'Low Altitude Assault Transport/infrantry',
-    'LAAT/i',
-    '30',
-    'http://localhost:3000/api/vehicles/21',
-    'gunship'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    22,
-    'unknown',
-    '40000',
-    'unknown',
-    '2022-11-19 19:30:33.706520',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '28.82',
-    'Rothana Heavy Engineering',
-    '620',
-    'Low Altitude Assault Transport/carrier',
-    'LAAT/c',
-    '0',
-    'http://localhost:3000/api/vehicles/22',
-    'gunship'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    23,
-    '21 days',
-    '10000',
-    'unknown',
-    '2022-11-19 19:30:33.708435',
-    '2022-11-19 19:30:33.000000',
-    '6',
-    '13.2',
-    'Rothana Heavy Engineering, Kuat Drive Yards',
-    '60',
-    'All Terrain Tactical Enforcer',
-    'AT-TE',
-    '36',
-    'http://localhost:3000/api/vehicles/23',
-    'walker'
+    'repulsorcraft'
   );
 INSERT INTO
   `vehicle` (
@@ -10302,20 +9914,20 @@ INSERT INTO
 VALUES
   (
     24,
-    '7 days',
-    '500',
-    'unknown',
-    '2022-11-19 19:30:33.709877',
-    '2022-11-19 19:30:33.000000',
-    '25',
-    '140',
-    'Rothana Heavy Engineering',
-    '35',
-    'Self-Propelled Heavy Artillery',
-    'SPHA',
+    'Live food tanks',
+    '2000000',
+    '285000',
+    '2022-12-05 12:28:42.478094',
+    '2022-12-05 12:28:42.000000',
+    '26',
     '30',
+    'Ubrikkian Industries Custom Vehicle Division',
+    '100',
+    'Modified Luxury Sail Barge',
+    'Sail barge',
+    '500',
     'http://localhost:3000/api/vehicles/24',
-    'walker'
+    'sail barge'
   );
 INSERT INTO
   `vehicle` (
@@ -10338,20 +9950,20 @@ INSERT INTO
 VALUES
   (
     25,
-    '7 days',
-    '1000',
-    'unknown',
-    '2022-11-19 19:30:33.712482',
-    '2022-11-19 19:30:33.000000',
-    '2',
-    '20',
-    'Haor Chall Engineering',
-    '880',
-    'Sheathipede-class transport shuttle',
-    'Neimoidian shuttle',
-    '6',
+    '1 day',
+    '135000',
+    '8000',
+    '2022-12-05 12:28:42.858128',
+    '2022-12-05 12:28:42.000000',
+    '5',
+    '9.5',
+    'Ubrikkian Industries',
+    '250',
+    'Bantha-II',
+    'Bantha-II cargo skiff',
+    '16',
     'http://localhost:3000/api/vehicles/25',
-    'transport'
+    'repulsorcraft cargo skiff'
   );
 INSERT INTO
   `vehicle` (
@@ -10374,17 +9986,17 @@ INSERT INTO
 VALUES
   (
     26,
+    '2 days',
+    '75',
     'unknown',
-    'unknown',
-    'unknown',
-    '2022-11-19 19:30:33.714316',
-    '2022-11-19 19:30:33.000000',
+    '2022-12-05 12:28:42.860437',
+    '2022-12-05 12:28:42.000000',
     '1',
-    '9.8',
-    'Huppla Pasa Tisc Shipwrights Collective',
-    '20000',
-    'Nantex-class territorial defense',
-    'Geonosian starfighter',
+    '9.6',
+    'Sienar Fleet Systems',
+    '1250',
+    'Twin Ion Engine Interceptor',
+    'TIE/IN interceptor',
     '0',
     'http://localhost:3000/api/vehicles/26',
     'starfighter'
@@ -10409,127 +10021,19 @@ INSERT INTO
   )
 VALUES
   (
-    27,
-    'none',
-    '200',
-    '5750',
-    '2022-11-19 19:30:33.715858',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '3.68',
-    'Mobquet Swoops and Speeders',
-    '350',
-    'Zephyr-G swoop bike',
-    'Zephyr-G swoop bike',
-    '1',
-    'http://localhost:3000/api/vehicles/27',
-    'repulsorcraft'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    28,
-    'unknown',
-    '80',
-    'unknown',
-    '2022-11-19 19:30:33.717247',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '6.6',
-    'Desler Gizh Outworld Mobility Corporation',
-    '800',
-    'Koro-2 Exodrive airspeeder',
-    'Koro-2 Exodrive airspeeder',
-    '1',
-    'http://localhost:3000/api/vehicles/28',
-    'airspeeder'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    29,
-    'unknown',
-    'unknown',
-    'unknown',
-    '2022-11-19 19:30:33.718554',
-    '2022-11-19 19:30:33.000000',
-    '1',
-    '6.23',
-    'Narglatch AirTech prefabricated kit',
-    '720',
-    'XJ-6 airspeeder',
-    'XJ-6 airspeeder',
-    '1',
-    'http://localhost:3000/api/vehicles/29',
-    'airspeeder'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
     30,
-    'unknown',
-    'unknown',
+    '1 day',
+    '4',
     '8000',
-    '2022-11-19 19:30:33.728662',
-    '2022-11-19 19:30:33.000000',
+    '2022-12-05 12:28:42.880389',
+    '2022-12-05 12:28:42.000000',
     '1',
-    '2',
-    'Huppla Pasa Tisc Shipwrights Collective',
-    '634',
-    'Flitknot speeder',
-    'Flitknot speeder',
-    '0',
+    '3',
+    'Aratech Repulsor Company',
+    '360',
+    '74-Z speeder bike',
+    'Imperial Speeder Bike',
+    '1',
     'http://localhost:3000/api/vehicles/30',
     'speeder'
   );
@@ -10553,93 +10057,21 @@ INSERT INTO
   )
 VALUES
   (
-    31,
-    'unknown',
-    'unknown',
-    'unknown',
-    '2022-11-19 19:30:34.115469',
-    '2022-11-19 19:30:34.000000',
-    '2',
-    'unknown',
-    'unknown',
-    'unknown',
-    'Fire suppression speeder',
-    'Emergency Firespeeder',
-    'unknown',
-    'http://localhost:3000/api/vehicles/31',
-    'fire suppression ship'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    32,
+    33,
     'none',
     '0',
-    '20000',
-    '2022-11-19 19:30:34.117859',
-    '2022-11-19 19:30:34.000000',
-    '1',
-    '5.4',
-    'Colla Designs, Phlac-Arphocc Automata Industries',
-    '1180',
-    'tri-fighter',
-    'Droid tri-fighter',
+    'unknown',
+    '2022-12-05 12:28:42.863011',
+    '2022-12-05 12:28:42.000000',
     '0',
-    'http://localhost:3000/api/vehicles/32',
-    'droid starfighter'
-  );
-INSERT INTO
-  `vehicle` (
-    `id`,
-    `consumables`,
-    `cargo_capacity`,
-    `cost_in_credits`,
-    `created`,
-    `edited`,
-    `crew`,
-    `length`,
-    `manufacturer`,
-    `max_atmosphering_speed`,
-    `model`,
-    `name`,
-    `passengers`,
-    `url`,
-    `vehicle_class`
-  )
-VALUES
-  (
-    33,
-    '3 days',
-    '50',
-    '12125',
-    '2022-11-19 19:30:34.119548',
-    '2022-11-19 19:30:34.000000',
-    '2',
-    '15.1',
-    'Appazanna Engineering Works',
-    '420',
-    'Oevvaor jet catamaran',
-    'Oevvaor jet catamaran',
-    '2',
+    '3.5',
+    'Haor Chall Engineering, Baktoid Armor Workshop',
+    '1200',
+    'Vulture-class droid starfighter',
+    'Vulture Droid',
+    '0',
     'http://localhost:3000/api/vehicles/33',
-    'airspeeder'
+    'starfighter'
   );
 INSERT INTO
   `vehicle` (
@@ -10662,20 +10094,20 @@ INSERT INTO
 VALUES
   (
     34,
-    'none',
-    '20',
-    '14750',
-    '2022-11-19 19:30:34.121183',
-    '2022-11-19 19:30:34.000000',
-    '2',
-    '7',
-    'Appazanna Engineering Works',
-    '310',
-    'Raddaugh Gnasp fluttercraft',
-    'Raddaugh Gnasp fluttercraft',
-    '0',
+    'unknown',
+    '12000',
+    '138000',
+    '2022-12-05 12:28:42.865340',
+    '2022-12-05 12:28:42.000000',
+    '4',
+    '31',
+    'Baktoid Armor Workshop',
+    '35',
+    'Multi-Troop Transport',
+    'Multi-Troop Transport',
+    '112',
     'http://localhost:3000/api/vehicles/34',
-    'air speeder'
+    'repulsorcraft'
   );
 INSERT INTO
   `vehicle` (
@@ -10698,20 +10130,20 @@ INSERT INTO
 VALUES
   (
     35,
-    '20 days',
-    '30000',
-    '350000',
-    '2022-11-19 19:30:34.123459',
-    '2022-11-19 19:30:34.000000',
-    '20',
-    '49.4',
-    'Kuat Drive Yards',
-    '160',
-    'HAVw A6 Juggernaut',
-    'Clone turbo tank',
-    '300',
+    'unknown',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:42.867072',
+    '2022-12-05 12:28:42.000000',
+    '4',
+    '9.75',
+    'Baktoid Armor Workshop',
+    '55',
+    'Armoured Assault Tank',
+    'Armored Assault Tank',
+    '6',
     'http://localhost:3000/api/vehicles/35',
-    'wheeled walker'
+    'repulsorcraft'
   );
 INSERT INTO
   `vehicle` (
@@ -10736,18 +10168,18 @@ VALUES
     36,
     'none',
     'none',
-    '49000',
-    '2022-11-19 19:30:34.125860',
-    '2022-11-19 19:30:34.000000',
+    '2500',
+    '2022-12-05 12:28:42.868342',
+    '2022-12-05 12:28:42.000000',
+    '1',
+    '2',
+    'Baktoid Armor Workshop',
+    '400',
+    'Single Trooper Aerial Platform',
+    'Single Trooper Aerial Platform',
     '0',
-    '10.96',
-    'Techno Union',
-    '100',
-    'NR-N99 Persuader-class droid enforcer',
-    'Corporate Alliance tank droid',
-    '4',
     'http://localhost:3000/api/vehicles/36',
-    'droid tank'
+    'repulsorcraft'
   );
 INSERT INTO
   `vehicle` (
@@ -10770,20 +10202,20 @@ INSERT INTO
 VALUES
   (
     37,
-    'none',
-    '0',
-    '60000',
-    '2022-11-19 19:30:34.128779',
-    '2022-11-19 19:30:34.000000',
-    '0',
-    '12.3',
-    'Baktoid Fleet Ordnance, Haor Chall Engineering',
-    '820',
-    'HMP droid gunship',
-    'Droid gunship',
-    '0',
+    '1 day',
+    '1800000',
+    '200000',
+    '2022-12-05 12:28:42.869583',
+    '2022-12-05 12:28:42.000000',
+    '140',
+    '210',
+    'Haor Chall Engineering',
+    '587',
+    'C-9979 landing craft',
+    'C-9979 landing craft',
+    '284',
     'http://localhost:3000/api/vehicles/37',
-    'airspeeder'
+    'landing craft'
   );
 INSERT INTO
   `vehicle` (
@@ -10806,19 +10238,271 @@ INSERT INTO
 VALUES
   (
     38,
-    '1 day',
-    '20',
-    '40000',
-    '2022-11-19 19:30:34.130850',
-    '2022-11-19 19:30:34.000000',
+    'unknown',
+    '1600',
+    'unknown',
+    '2022-12-05 12:28:42.889389',
+    '2022-12-05 12:28:43.000000',
     '1',
-    '3.2',
-    'Kuat Drive Yards',
-    '90',
-    'All Terrain Recon Transport',
-    'AT-RT',
-    '0',
+    '15',
+    'Otoh Gunga Bongameken Cooperative',
+    '85',
+    'Tribubble bongo',
+    'Tribubble bongo',
+    '2',
     'http://localhost:3000/api/vehicles/38',
+    'submarine'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    42,
+    'unknown',
+    '2',
+    '4000',
+    '2022-12-05 12:28:42.890387',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '1.5',
+    'Razalon',
+    '180',
+    'FC-20 speeder bike',
+    'Sith speeder',
+    '0',
+    'http://localhost:3000/api/vehicles/42',
+    'speeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    44,
+    'none',
+    '200',
+    '5750',
+    '2022-12-05 12:28:43.166046',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '3.68',
+    'Mobquet Swoops and Speeders',
+    '350',
+    'Zephyr-G swoop bike',
+    'Zephyr-G swoop bike',
+    '1',
+    'http://localhost:3000/api/vehicles/44',
+    'repulsorcraft'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    45,
+    'unknown',
+    '80',
+    'unknown',
+    '2022-12-05 12:28:43.167684',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '6.6',
+    'Desler Gizh Outworld Mobility Corporation',
+    '800',
+    'Koro-2 Exodrive airspeeder',
+    'Koro-2 Exodrive airspeeder',
+    '1',
+    'http://localhost:3000/api/vehicles/45',
+    'airspeeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    46,
+    'unknown',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:43.169837',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '6.23',
+    'Narglatch AirTech prefabricated kit',
+    '720',
+    'XJ-6 airspeeder',
+    'XJ-6 airspeeder',
+    '1',
+    'http://localhost:3000/api/vehicles/46',
+    'airspeeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    50,
+    'unknown',
+    '170',
+    'unknown',
+    '2022-12-05 12:28:43.154482',
+    '2022-12-05 12:28:43.000000',
+    '6',
+    '17.4',
+    'Rothana Heavy Engineering',
+    '620',
+    'Low Altitude Assault Transport/infrantry',
+    'LAAT/i',
+    '30',
+    'http://localhost:3000/api/vehicles/50',
+    'gunship'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    51,
+    'unknown',
+    '40000',
+    'unknown',
+    '2022-12-05 12:28:43.157048',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '28.82',
+    'Rothana Heavy Engineering',
+    '620',
+    'Low Altitude Assault Transport/carrier',
+    'LAAT/c',
+    '0',
+    'http://localhost:3000/api/vehicles/51',
+    'gunship'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    53,
+    '21 days',
+    '10000',
+    'unknown',
+    '2022-12-05 12:28:43.158186',
+    '2022-12-05 12:28:43.000000',
+    '6',
+    '13.2',
+    'Rothana Heavy Engineering, Kuat Drive Yards',
+    '60',
+    'All Terrain Tactical Enforcer',
+    'AT-TE',
+    '36',
+    'http://localhost:3000/api/vehicles/53',
     'walker'
   );
 INSERT INTO
@@ -10841,12 +10525,156 @@ INSERT INTO
   )
 VALUES
   (
-    39,
+    54,
+    '7 days',
+    '500',
+    'unknown',
+    '2022-12-05 12:28:43.159378',
+    '2022-12-05 12:28:43.000000',
+    '25',
+    '140',
+    'Rothana Heavy Engineering',
+    '35',
+    'Self-Propelled Heavy Artillery',
+    'SPHA',
+    '30',
+    'http://localhost:3000/api/vehicles/54',
+    'walker'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    55,
+    'unknown',
+    'unknown',
+    '8000',
+    '2022-12-05 12:28:43.228792',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '2',
+    'Huppla Pasa Tisc Shipwrights Collective',
+    '634',
+    'Flitknot speeder',
+    'Flitknot speeder',
+    '0',
+    'http://localhost:3000/api/vehicles/55',
+    'speeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    56,
+    '7 days',
+    '1000',
+    'unknown',
+    '2022-12-05 12:28:43.162095',
+    '2022-12-05 12:28:43.000000',
+    '2',
+    '20',
+    'Haor Chall Engineering',
+    '880',
+    'Sheathipede-class transport shuttle',
+    'Neimoidian shuttle',
+    '6',
+    'http://localhost:3000/api/vehicles/56',
+    'transport'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    57,
+    'unknown',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:43.163951',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '9.8',
+    'Huppla Pasa Tisc Shipwrights Collective',
+    '20000',
+    'Nantex-class territorial defense',
+    'Geonosian starfighter',
+    '0',
+    'http://localhost:3000/api/vehicles/57',
+    'starfighter'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    60,
     'none',
     '10',
     '15000',
-    '2022-11-19 19:30:34.134231',
-    '2022-11-19 19:30:34.000000',
+    '2022-12-05 12:28:43.457792',
+    '2022-12-05 12:28:43.000000',
     '1',
     '3.5',
     'Z-Gomot Ternbuell Guppat Corporation',
@@ -10854,8 +10682,296 @@ VALUES
     'Tsmeu-6 personal wheel bike',
     'Tsmeu-6 personal wheel bike',
     '1',
-    'http://localhost:3000/api/vehicles/39',
+    'http://localhost:3000/api/vehicles/60',
     'wheeled walker'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    62,
+    'unknown',
+    'unknown',
+    'unknown',
+    '2022-12-05 12:28:43.442650',
+    '2022-12-05 12:28:43.000000',
+    '2',
+    'unknown',
+    'unknown',
+    'unknown',
+    'Fire suppression speeder',
+    'Emergency Firespeeder',
+    'unknown',
+    'http://localhost:3000/api/vehicles/62',
+    'fire suppression ship'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    67,
+    'none',
+    '0',
+    '20000',
+    '2022-12-05 12:28:43.444516',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '5.4',
+    'Colla Designs, Phlac-Arphocc Automata Industries',
+    '1180',
+    'tri-fighter',
+    'Droid tri-fighter',
+    '0',
+    'http://localhost:3000/api/vehicles/67',
+    'droid starfighter'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    69,
+    '3 days',
+    '50',
+    '12125',
+    '2022-12-05 12:28:43.445821',
+    '2022-12-05 12:28:43.000000',
+    '2',
+    '15.1',
+    'Appazanna Engineering Works',
+    '420',
+    'Oevvaor jet catamaran',
+    'Oevvaor jet catamaran',
+    '2',
+    'http://localhost:3000/api/vehicles/69',
+    'airspeeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    70,
+    'none',
+    '20',
+    '14750',
+    '2022-12-05 12:28:43.447740',
+    '2022-12-05 12:28:43.000000',
+    '2',
+    '7',
+    'Appazanna Engineering Works',
+    '310',
+    'Raddaugh Gnasp fluttercraft',
+    'Raddaugh Gnasp fluttercraft',
+    '0',
+    'http://localhost:3000/api/vehicles/70',
+    'air speeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    71,
+    '20 days',
+    '30000',
+    '350000',
+    '2022-12-05 12:28:43.450817',
+    '2022-12-05 12:28:43.000000',
+    '20',
+    '49.4',
+    'Kuat Drive Yards',
+    '160',
+    'HAVw A6 Juggernaut',
+    'Clone turbo tank',
+    '300',
+    'http://localhost:3000/api/vehicles/71',
+    'wheeled walker'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    72,
+    'none',
+    'none',
+    '49000',
+    '2022-12-05 12:28:43.452673',
+    '2022-12-05 12:28:43.000000',
+    '0',
+    '10.96',
+    'Techno Union',
+    '100',
+    'NR-N99 Persuader-class droid enforcer',
+    'Corporate Alliance tank droid',
+    '4',
+    'http://localhost:3000/api/vehicles/72',
+    'droid tank'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    73,
+    'none',
+    '0',
+    '60000',
+    '2022-12-05 12:28:43.453958',
+    '2022-12-05 12:28:43.000000',
+    '0',
+    '12.3',
+    'Baktoid Fleet Ordnance, Haor Chall Engineering',
+    '820',
+    'HMP droid gunship',
+    'Droid gunship',
+    '0',
+    'http://localhost:3000/api/vehicles/73',
+    'airspeeder'
+  );
+INSERT INTO
+  `vehicle` (
+    `id`,
+    `consumables`,
+    `cargo_capacity`,
+    `cost_in_credits`,
+    `created`,
+    `edited`,
+    `crew`,
+    `length`,
+    `manufacturer`,
+    `max_atmosphering_speed`,
+    `model`,
+    `name`,
+    `passengers`,
+    `url`,
+    `vehicle_class`
+  )
+VALUES
+  (
+    76,
+    '1 day',
+    '20',
+    '40000',
+    '2022-12-05 12:28:43.455227',
+    '2022-12-05 12:28:43.000000',
+    '1',
+    '3.2',
+    'Kuat Drive Yards',
+    '90',
+    'All Terrain Recon Transport',
+    'AT-RT',
+    '0',
+    'http://localhost:3000/api/vehicles/76',
+    'walker'
   );
 
 # ------------------------------------------------------------
@@ -10870,51 +10986,27 @@ VALUES
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (1, 1);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (1, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (2, 1);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (3, 1);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
   (4, 1);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (4, 2);
+  (4, 5);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (4, 3);
+  (6, 1);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (5, 2);
+  (7, 1);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (5, 3);
+  (8, 1);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (6, 2);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (6, 3);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (7, 2);
+  (8, 2);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
@@ -10922,47 +11014,19 @@ VALUES
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (9, 2);
+  (14, 2);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (10, 2);
+  (16, 2);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (10, 3);
+  (16, 3);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (11, 3);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (12, 3);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (13, 4);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (13, 6);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (14, 4);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (15, 4);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (16, 4);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (17, 4);
+  (18, 2);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
@@ -10970,71 +11034,35 @@ VALUES
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (19, 4);
+  (19, 2);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (20, 4);
+  (19, 3);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (21, 5);
+  (20, 2);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (21, 6);
+  (24, 3);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (22, 5);
+  (25, 3);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (23, 5);
+  (26, 3);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (23, 6);
+  (30, 3);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (24, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (25, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (25, 6);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (26, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (27, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (28, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (29, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (30, 5);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (31, 6);
-INSERT INTO
-  `vehicles_films` (`vehicleId`, `filmId`)
-VALUES
-  (32, 6);
+  (33, 4);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
@@ -11042,27 +11070,115 @@ VALUES
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (34, 6);
+  (34, 4);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (35, 6);
+  (35, 4);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (36, 6);
+  (36, 4);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (37, 6);
+  (37, 4);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (38, 6);
+  (38, 4);
 INSERT INTO
   `vehicles_films` (`vehicleId`, `filmId`)
 VALUES
-  (39, 6);
+  (42, 4);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (44, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (45, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (46, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (50, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (50, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (51, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (53, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (53, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (54, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (55, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (56, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (56, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (57, 5);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (60, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (62, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (67, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (69, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (70, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (71, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (72, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (73, 6);
+INSERT INTO
+  `vehicles_films` (`vehicleId`, `filmId`)
+VALUES
+  (76, 6);
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: vehicles_people
@@ -11071,55 +11187,47 @@ VALUES
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (9, 1);
+  (14, 18);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (9, 18);
+  (19, 13);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (10, 13);
+  (30, 5);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (18, 1);
+  (38, 10);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (18, 5);
+  (38, 32);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (19, 10);
+  (42, 44);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (19, 32);
+  (44, 11);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (20, 44);
+  (45, 70);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (27, 11);
+  (46, 11);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (28, 70);
+  (55, 67);
 INSERT INTO
   `vehicles_people` (`vehicleId`, `peopleId`)
 VALUES
-  (29, 11);
-INSERT INTO
-  `vehicles_people` (`vehicleId`, `peopleId`)
-VALUES
-  (30, 67);
-INSERT INTO
-  `vehicles_people` (`vehicleId`, `peopleId`)
-VALUES
-  (39, 79);
+  (60, 79);
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
